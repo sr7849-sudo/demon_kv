@@ -1,0 +1,214 @@
+from __future__ import annotations
+
+import argparse
+from pathlib import Path
+
+import pandas as pd
+from tqdm import tqdm
+
+from riskkv.backend import KVPressBackend
+from riskkv.config import load_config, validate_config
+import json
+from riskkv.features import extract_prefill_features
+from riskkv.longbench_eval import (
+    build_longbench_prompt,
+    score_longbench,
+)
+from riskkv.metrics import score
+from riskkv.policies import PolicySpec
+
+
+def parse_args():
+    p = argparse.ArgumentParser()
+    p.add_argument(
+        "--config",
+        default="configs/default.yaml",
+    )
+    p.add_argument(
+        "--input",
+        default="data/requests.jsonl",
+    )
+    p.add_argument(
+        "--limit",
+        type=int,
+        default=None,
+    )
+    p.add_argument(
+        "--output",
+        default="results/oracle.csv",
+    )
+    return p.parse_args()
+
+
+def evaluate_answer(row, answer: str) -> float:
+    metric = row.get("metric", "token_f1")
+
+    if metric == "official_longbench":
+        references = row.get("references")
+        if not references:
+            references = [row["reference"]]
+
+        return score_longbench(
+            dataset=row["task"],
+            prediction=answer,
+            references=references,
+            all_classes=row.get("all_classes"),
+        )
+
+    return score(
+        answer,
+        row["reference"],
+        metric,
+    )
+
+
+def generation_inputs(row):
+    if row.get("metric") == "official_longbench":
+        formatted = build_longbench_prompt(
+            dataset=row["task"],
+            context=row["context"],
+            user_input=row["question"],
+        )
+        return formatted, ""
+
+    return row["context"], row["question"]
+
+
+def main():
+    args = parse_args()
+
+    cfg = load_config(args.config)
+    validate_config(cfg)
+
+    with open(args.input, "r", encoding="utf-8") as f:
+        rows = [
+            json.loads(line)
+            for line in f
+            if line.strip()
+        ]
+
+    if args.limit is not None:
+        rows = rows[:args.limit]
+
+    m = cfg["model"]
+
+    backend = KVPressBackend(
+        m["name"],
+        device=m.get("device", "cuda:0"),
+        dtype=m.get("dtype", "auto"),
+        device_map=m.get("device_map"),
+        trust_remote_code=m.get("trust_remote_code", False),
+    )
+
+    policies = [
+        PolicySpec.from_dict(x)
+        for x in cfg["policies"]
+    ]
+
+    records = []
+
+    for row in tqdm(rows, desc="requests"):
+        context_for_model, question_for_model = generation_inputs(row)
+
+        feats = extract_prefill_features(
+            backend.model,
+            backend.tokenizer,
+            context_for_model,
+            question_for_model,
+            max_tokens=int(
+                m.get("feature_max_tokens", 32768)
+            ),
+        )
+
+        per_policy = []
+
+        for policy in policies:
+            gr = backend.generate(
+                context_for_model,
+                question_for_model,
+                policy,
+                max_new_tokens=m.get("max_new_tokens", 64),
+                do_sample=m.get("do_sample", False),
+                temperature=m.get("temperature", 0.0),
+            )
+
+            quality = evaluate_answer(
+                row,
+                gr.answer,
+            )
+
+            rec = {
+                "request_id": row["request_id"],
+                "task": row["task"],
+                "task_category": row.get("task_category"),
+                "metric": row.get("metric"),
+                "policy": policy.name,
+                "family": policy.family,
+                "memory_ratio": policy.memory_ratio,
+                "reference": row["reference"],
+                "references": str(
+                    row.get(
+                        "references",
+                        [row["reference"]],
+                    )
+                ),
+                "answer": gr.answer,
+                "quality": float(quality),
+                "actual_seconds": gr.total_seconds,
+                "actual_peak_gpu_bytes": gr.peak_gpu_bytes,
+                "actual_allocated_gpu_bytes": gr.allocated_gpu_bytes,
+                **feats,
+            }
+
+            per_policy.append(rec)
+
+        full_rows = [
+            x
+            for x in per_policy
+            if x["family"] == "full"
+            or x["policy"] == "full"
+        ]
+
+        if len(full_rows) != 1:
+            raise RuntimeError(
+                f"Expected exactly one FullKV policy for "
+                f"{row['request_id']}; got {len(full_rows)}"
+            )
+
+        full_quality = float(
+            full_rows[0]["quality"]
+        )
+
+        for rec in per_policy:
+            signed_delta = (
+                full_quality
+                - float(rec["quality"])
+            )
+
+            rec["full_quality"] = full_quality
+            rec["signed_delta"] = signed_delta
+            rec["degradation"] = max(
+                0.0,
+                signed_delta,
+            )
+
+            records.append(rec)
+
+    output = Path(args.output)
+    output.parent.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
+
+    pd.DataFrame(records).to_csv(
+        output,
+        index=False,
+    )
+
+    print(
+        f"Wrote {len(records)} rows to {output}"
+    )
+
+
+if __name__ == "__main__":
+    main()

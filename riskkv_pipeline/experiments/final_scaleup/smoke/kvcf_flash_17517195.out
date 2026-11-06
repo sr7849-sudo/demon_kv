@@ -1,0 +1,43 @@
+============================================================
+BUILD ENVIRONMENT
+============================================================
+cn006
+NVIDIA A100-PCIE-40GB, 40960 MiB, 580.105.08
+
+Python:
+/scratch/sr7849/conda_envs/riskkv-kvcf/bin/python
+Python 3.11.15
+
+NVCC:
+/scratch/sr7849/conda_envs/riskkv-adakv/bin/nvcc
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2025 NVIDIA Corporation
+Built on Fri_Feb_21_20:23:50_PST_2025
+Cuda compilation tools, release 12.8, V12.8.93
+Build cuda_12.8.r12.8/compiler.35583870_0
+
+Compiler:
+x86_64-conda-linux-gnu-gcc (conda-forge gcc 12.4.0-2) 12.4.0
+
+Host GLIBC:
+ldd (GNU libc) 2.28
+
+Torch:
+2.8.0+cu128
+12.8
+CUDA: True
+
+============================================================
+REMOVE ANY INCOMPATIBLE FLASH-ATTN
+============================================================
+
+============================================================
+GET SOURCE DISTRIBUTION
+============================================================
+Collecting flash-attn==2.8.3
+  Using cached flash_attn-2.8.3.tar.gz (8.4 MB)
+  Installing build dependencies: started
+  Installing build dependencies: still running...
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'error'

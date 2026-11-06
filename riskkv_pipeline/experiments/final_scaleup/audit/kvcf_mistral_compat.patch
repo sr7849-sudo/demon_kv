@@ -1,0 +1,27 @@
+diff --git a/pyramidkv/mistral_model.py b/pyramidkv/mistral_model.py
+index ff0c165..6f47cf3 100644
+--- a/pyramidkv/mistral_model.py
++++ b/pyramidkv/mistral_model.py
+@@ -857,7 +857,7 @@ def mistral_flash_attn2_forward_L2Norm(
+ 
+     # Because the input can be padded, the absolute sequence length depends on the max position id.
+     rotary_seq_len = max(kv_seq_len, position_ids[:, -1].max().item()) + 1
+-    cos, sin = self.rotary_emb(value_states, seq_len=rotary_seq_len)
++    cos, sin = self.rotary_emb(value_states, position_ids)
+ 
+     query_states, key_states = apply_rotary_pos_emb(query_states, key_states, cos, sin, position_ids)
+ 
+@@ -951,12 +951,12 @@ def mistral_flash_attn2_forward_L2Norm(
+     # [SnapKV] change attention_mask to None
+     # print('layer id', self.layer_idx, 'query_states', query_states.shape, 'key_states', key_states.shape, 'value_states', value_states.shape, 'attention_mask', attention_mask.shape, 'kv_seq_len', kv_seq_len, 'dropout_rate', dropout_rate, 'use_sliding_windows', use_sliding_windows)
+     attn_output = _flash_attention_forward(
+-        self,
+         query_states,
+         key_states,
+         value_states,
+         attention_mask,
+         q_len,
++        is_causal=self.is_causal,
+         dropout=dropout_rate,
+     )
+ 

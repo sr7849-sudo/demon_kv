@@ -1,0 +1,46 @@
+{
+  "delta": 0.1,
+  "epsilon": 0.05,
+  "riskkv": {
+    "n": 1331,
+    "violation_rate": 0.0,
+    "mean_saving": 0.6566656830013391,
+    "mean_quality": 0.5143755021752787,
+    "fallback_rate": 0.1720510894064613,
+    "violation_rate_ci95": [
+      0.0,
+      0.0
+    ],
+    "mean_saving_ci95": [
+      0.6367060195606918,
+      0.6762506198645425
+    ],
+    "mean_quality_ci95": [
+      0.49311894477043217,
+      0.5348903249189149
+    ],
+    "oracle_recovery_mean_saving": 0.697304567507121
+  },
+  "static": {
+    "n": 1331,
+    "violation_rate": 0.039819684447783624,
+    "mean_saving": 0.6633098885947031,
+    "mean_quality": 0.5036278769067746,
+    "fallback_rate": 0.0,
+    "config": "adakv_2048"
+  },
+  "task_static": {
+    "n": 1331,
+    "violation_rate": 0.03305785123966942,
+    "mean_saving": 0.7307976608276248,
+    "mean_quality": 0.49736205535320593,
+    "fallback_rate": 0.0
+  },
+  "oracle": {
+    "n": 1331,
+    "violation_rate": 0.0,
+    "mean_saving": 0.9417200368397602,
+    "mean_quality": 0.5273467948508629,
+    "fallback_rate": 0.0015026296018031556
+  }
+}

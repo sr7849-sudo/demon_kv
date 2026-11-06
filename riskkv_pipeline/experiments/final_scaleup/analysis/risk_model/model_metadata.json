@@ -1,0 +1,29 @@
+{
+  "categorical": [
+    "task",
+    "policy"
+  ],
+  "numeric": [
+    "prompt_tokens",
+    "budget_num",
+    "budget_fraction",
+    "retention_ratio_nominal",
+    "nominal_saving",
+    "log_prompt_tokens",
+    "log_budget",
+    "prompt_char_count",
+    "prompt_word_count",
+    "prompt_line_count",
+    "prompt_digit_fraction",
+    "prompt_alpha_fraction",
+    "prompt_punct_fraction",
+    "prompt_question_marks",
+    "input_char_count",
+    "input_word_count",
+    "context_char_count",
+    "context_word_count",
+    "answer_count"
+  ],
+  "delta": 0.1,
+  "ensemble": 10
+}

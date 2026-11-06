@@ -1,0 +1,20 @@
+{
+  "tasks": [
+    "qasper",
+    "multifieldqa_en",
+    "hotpotqa",
+    "triviaqa",
+    "gov_report",
+    "multi_news",
+    "trec",
+    "passage_retrieval_en",
+    "passage_count"
+  ],
+  "qwen_model": "Qwen/Qwen3-8B",
+  "mistral_model": "mistralai/Mistral-7B-Instruct-v0.2",
+  "min_tokens": 1500,
+  "max_tokens": 16000,
+  "raw_total": 1750,
+  "retained_total": 1331,
+  "filter_rule": "retain iff BOTH Qwen3-8B and Mistral-7B-Instruct-v0.2 prompt token counts are in [1500, 16000]"
+}

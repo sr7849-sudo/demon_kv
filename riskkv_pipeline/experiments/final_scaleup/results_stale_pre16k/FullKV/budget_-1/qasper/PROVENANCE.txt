@@ -1,0 +1,6 @@
+git_commit=68cd9551a63fedf362ddb0edb008badd04c24996
+model=mistralai/Mistral-7B-Instruct-v0.2
+task=qasper
+method=FullKV
+budget_tokens=-1
+data=/scratch/sr7849/KV_Cache/riskkv_pipeline/data/final_common_longbench/qasper.jsonl

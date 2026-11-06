@@ -1,0 +1,17 @@
+{
+  "hostname": "cn009",
+  "platform": "Linux-4.18.0-513.5.1.el8_9.x86_64-x86_64-with-glibc2.28",
+  "torch_version": "2.13.0+cu130",
+  "cuda_version": "13.0",
+  "gpu_name": "NVIDIA A100-PCIE-40GB",
+  "gpu_capability": [
+    8,
+    0
+  ],
+  "requests": 25,
+  "policies": 8,
+  "warmups": 2,
+  "repetitions": 5,
+  "telemetry_interval_s": 0.02,
+  "raw_rows": 1000
+}

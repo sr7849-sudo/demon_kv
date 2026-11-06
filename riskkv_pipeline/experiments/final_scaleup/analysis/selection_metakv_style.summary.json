@@ -1,0 +1,8 @@
+{
+  "label": "matched-candidate MetaKV-style open-loop quality predictor",
+  "requests": 1331,
+  "delta": 0.1,
+  "violation_rate": 0.15777610818933133,
+  "mean_nominal_saving": 0.955731459649548,
+  "mean_quality": 0.4741989307797955
+}

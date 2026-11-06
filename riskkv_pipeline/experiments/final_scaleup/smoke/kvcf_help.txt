@@ -1,0 +1,95 @@
+usage: run_longbench.py [-h] [--seed SEED] [--base_dir BASE_DIR]
+                        [--dataset DATASET] [--datasets DATASETS]
+                        [--data_file DATA_FILE] [--save_dir SAVE_DIR]
+                        [--model_name MODEL_NAME] [--model_path MODEL_PATH]
+                        [--use_fast_tokenizer USE_FAST_TOKENIZER]
+                        [--output_attentions OUTPUT_ATTENTIONS]
+                        [--max_num_examples MAX_NUM_EXAMPLES]
+                        [--sample_method {random,topk}]
+                        [--max_new_tokens MAX_NEW_TOKENS]
+                        [--eval_batch_size EVAL_BATCH_SIZE]
+                        [--use_cache USE_CACHE]
+                        [--attn_implementation {flash_attention_2,sdpa,eager}]
+                        [--dtype {float16,bfloat16,auto}] [--method METHOD]
+                        [--kv_cache_granularity {query_head,kv_head}]
+                        [--gqa_score_agg {mean,max,sum}]
+                        [--quant_method {kivi,kvquant}] [--nbits NBITS]
+                        [--quant_backend {hqq,quanto}]
+                        [--quant_device QUANT_DEVICE]
+                        [--quant_residual_length QUANT_RESIDUAL_LENGTH]
+                        [--q_group_size Q_GROUP_SIZE] [--axis_key {0,1}]
+                        [--axis_value {0,1}]
+                        [--max_capacity_prompts MAX_CAPACITY_PROMPTS]
+                        [--max_capacity_prompts_ratio MAX_CAPACITY_PROMPTS_RATIO]
+                        [--steps STEPS] [--merge MERGE] [--floor FLOOR]
+                        [--head_path HEAD_PATH] [--head_beta HEAD_BETA]
+                        [--recent_size RECENT_SIZE]
+                        [--pruning_ratio PRUNING_RATIO] [--use_chat_format]
+                        [--chat_formatting_function CHAT_FORMATTING_FUNCTION]
+
+options:
+  -h, --help            show this help message and exit
+  --seed SEED
+  --base_dir BASE_DIR
+  --dataset DATASET     deprecated alias of --datasets, kept for backward
+                        compatibility.
+  --datasets DATASETS   comma-separated LongBench datasets to evaluate;
+                        defaults to the full list.
+  --data_file DATA_FILE
+  --save_dir SAVE_DIR
+  --model_name MODEL_NAME
+                        if specified, we will load the model to generate the
+                        predictions.
+  --model_path MODEL_PATH
+                        if specified, we will load the model to generate the
+                        predictions.
+  --use_fast_tokenizer USE_FAST_TOKENIZER
+  --output_attentions OUTPUT_ATTENTIONS
+  --max_num_examples MAX_NUM_EXAMPLES
+                        maximum number of examples to evaluate per task.
+  --sample_method {random,topk}
+                        how to sample the examples.
+  --max_new_tokens MAX_NEW_TOKENS
+  --eval_batch_size EVAL_BATCH_SIZE
+                        batch size for evaluation.
+  --use_cache USE_CACHE
+  --attn_implementation {flash_attention_2,sdpa,eager}
+  --dtype {float16,bfloat16,auto}
+                        torch dtype used to load the model.
+  --method METHOD
+  --kv_cache_granularity {query_head,kv_head}
+                        Granularity of the compressed KV cache (see
+                        docs/gqa_cache_layout.md).
+  --gqa_score_agg {mean,max,sum}
+                        How per-query-head scores are aggregated per KV head
+                        when kv_cache_granularity=kv_head.
+  --quant_method {kivi,kvquant}
+  --nbits NBITS
+  --quant_backend {hqq,quanto}
+                        Quantized cache backend.
+  --quant_device QUANT_DEVICE
+                        Device used by the quantized cache backend.
+  --quant_residual_length QUANT_RESIDUAL_LENGTH
+                        Full-precision residual window for quantized cache;
+                        defaults to max_new_tokens.
+  --q_group_size Q_GROUP_SIZE
+                        Quantization group size.
+  --axis_key {0,1}      Override key quantization axis.
+  --axis_value {0,1}    Override value quantization axis.
+  --max_capacity_prompts MAX_CAPACITY_PROMPTS
+  --max_capacity_prompts_ratio MAX_CAPACITY_PROMPTS_RATIO
+  --steps STEPS         maximum number of examples to evaluate per task.
+  --merge MERGE         kv merge method(look-m)
+  --floor FLOOR         hyper-parameter used in AdaKV
+  --head_path HEAD_PATH
+                        Path to head score (HeadKV)
+  --head_beta HEAD_BETA
+                        hyper-parameter used on HeadKV
+  --recent_size RECENT_SIZE
+  --pruning_ratio PRUNING_RATIO
+                        pruning ratio of Key Cache
+  --use_chat_format     If given, we will use the chat format for the prompts.
+  --chat_formatting_function CHAT_FORMATTING_FUNCTION
+                        The function to use to create the chat format. This
+                        function will be dynamically imported. Please see
+                        examples in `eval/templates.py`.

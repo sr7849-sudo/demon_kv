@@ -1,0 +1,11 @@
+system_state,policy,requests
+energy_pressure,full,12
+energy_pressure,snapkv_25,8
+latency_pressure,full,20
+memory_pressure,full,8
+memory_pressure,snapkv_75,12
+normal,full,12
+normal,knorm_50,4
+normal,snapkv_75,4
+power_cap,full,16
+power_cap,snapkv_75,4

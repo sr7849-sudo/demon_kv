@@ -1,0 +1,10 @@
+which: no nvcc in (/scratch/sr7849/conda_envs/riskkv-kvcf/bin:/share/apps/NYUAD5/Modules/4.6.1//bin:/share/apps/NYUAD5/miniconda/3-4.11.0/bin:/share/apps/NYUAD5/miniconda/3-4.11.0/condabin:/share/apps/NYUAD5/spack/current/bin:/share/apps/NYUAD5/Modules/4.6.1/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/slurm/default/bin:/opt/slurm/default/sbin:/opt/TurboVNC/bin:/share/apps/NYUAD5/singularity/current/bin:/share/apps/NYUAD5/singularity/images:/share/apps/admin/tools)
+/var/spool/slurmd/job17517184/slurm_script: line 44: nvcc: command not found
+/var/spool/slurmd/job17517184/slurm_script: line 48: gcc: command not found
+Traceback (most recent call last):
+  File "<stdin>", line 2, in <module>
+  File "/scratch/sr7849/conda_envs/riskkv-kvcf/lib/python3.11/site-packages/flash_attn/__init__.py", line 3, in <module>
+    from flash_attn.flash_attn_interface import (
+  File "/scratch/sr7849/conda_envs/riskkv-kvcf/lib/python3.11/site-packages/flash_attn/flash_attn_interface.py", line 15, in <module>
+    import flash_attn_2_cuda as flash_attn_gpu
+ImportError: libcudart.so.12: cannot open shared object file: No such file or directory

@@ -1,0 +1,4 @@
+space_a,space_b,fraction_frontier_changed,requests_changed,requests_total
+nominal_2d,measured_2d,0.906896551724138,263,290
+measured_2d,measured_3d,0.9724137931034482,282,290
+nominal_2d,measured_3d,0.993103448275862,288,290

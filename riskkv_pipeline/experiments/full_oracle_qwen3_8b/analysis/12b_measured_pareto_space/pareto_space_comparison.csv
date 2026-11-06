@@ -1,0 +1,4 @@
+space,distinct_pareto_sets,mean_pareto_points,median_pareto_points,min_pareto_points,max_pareto_points
+nominal_2d,17,2.168965517241379,2.0,1,5
+measured_2d,18,1.4827586206896552,1.0,1,6
+measured_3d,78,3.6482758620689655,4.0,1,8

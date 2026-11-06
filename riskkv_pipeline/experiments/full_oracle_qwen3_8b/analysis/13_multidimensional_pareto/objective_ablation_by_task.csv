@@ -1,0 +1,16 @@
+task,space_a,space_b,requests,requests_changed,fraction_changed
+hotpotqa,S2_D_M,S3_D_M_T,5,5,1.0
+multifieldqa_en,S2_D_M,S3_D_M_T,5,5,1.0
+passage_retrieval_en,S2_D_M,S3_D_M_T,5,5,1.0
+qasper,S2_D_M,S3_D_M_T,5,5,1.0
+triviaqa,S2_D_M,S3_D_M_T,5,3,0.6
+hotpotqa,S3_D_M_T,S4_D_M_T_E,5,1,0.2
+multifieldqa_en,S3_D_M_T,S4_D_M_T_E,5,0,0.0
+passage_retrieval_en,S3_D_M_T,S4_D_M_T_E,5,0,0.0
+qasper,S3_D_M_T,S4_D_M_T_E,5,1,0.2
+triviaqa,S3_D_M_T,S4_D_M_T_E,5,4,0.8
+hotpotqa,S4_D_M_T_E,S5_D_M_T_E_P,5,3,0.6
+multifieldqa_en,S4_D_M_T_E,S5_D_M_T_E_P,5,2,0.4
+passage_retrieval_en,S4_D_M_T_E,S5_D_M_T_E_P,5,0,0.0
+qasper,S4_D_M_T_E,S5_D_M_T_E_P,5,3,0.6
+triviaqa,S4_D_M_T_E,S5_D_M_T_E_P,5,5,1.0

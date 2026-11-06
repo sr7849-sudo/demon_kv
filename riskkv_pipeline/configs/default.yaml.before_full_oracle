@@ -1,0 +1,67 @@
+seed: 42
+model:
+  name: Qwen/Qwen3-8B
+  dtype: auto
+  device: cuda:0
+  device_map: null
+  trust_remote_code: false
+  max_new_tokens: 64
+  do_sample: false
+  temperature: 0.0
+  feature_max_tokens: 32768
+  feature_attention_layers: [0, 8, 16, 24]
+  feature_attention_query_window: 64
+
+data:
+  input_jsonl: data/requests.jsonl
+  id_field: request_id
+  context_field: context
+  question_field: question
+  reference_field: reference
+  task_field: task
+  metric_field: metric
+
+policies:
+  - name: full
+    family: full
+    memory_ratio: 1.0
+  - name: snapkv_25
+    family: snapkv
+    compression_ratio: 0.25
+    memory_ratio: 0.75
+  - name: snapkv_50
+    family: snapkv
+    compression_ratio: 0.50
+    memory_ratio: 0.50
+  - name: snapkv_75
+    family: snapkv
+    compression_ratio: 0.75
+    memory_ratio: 0.25
+  - name: knorm_50
+    family: knorm
+    compression_ratio: 0.50
+    memory_ratio: 0.50
+  - name: quant4
+    family: quantized
+    nbits: 4
+    backend: quanto
+    memory_ratio: 0.25
+
+quality:
+  degradation_definition: absolute
+  epsilon: 0.02
+  unsafe_threshold: 0.05
+  lower_is_better_metrics: []
+
+predictor:
+  model: hist_gradient_boosting
+  test_size: 0.20
+  val_size: 0.15
+  group_split_by: request_id
+  calibration: isotonic
+
+system:
+  warmup_runs: 2
+  measured_runs: 5
+  synchronization: true
+  concurrency_levels: [1, 2, 4, 8]

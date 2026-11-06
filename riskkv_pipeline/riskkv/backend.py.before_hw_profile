@@ -1,0 +1,44 @@
+from __future__ import annotations
+import time
+from dataclasses import dataclass
+from .policies import PolicySpec, build_runtime_policy
+
+@dataclass
+class GenerationResult:
+    answer: str
+    total_seconds: float
+    peak_gpu_bytes: int
+    allocated_gpu_bytes: int
+
+class KVPressBackend:
+    def __init__(self, model_name: str, device="cuda:0", dtype="auto", device_map=None, trust_remote_code=False):
+        import torch, kvpress  # registers pipeline
+        from transformers import pipeline
+        kwargs={"model":model_name,"dtype":dtype,"trust_remote_code":trust_remote_code}
+        if device_map: kwargs["device_map"]=device_map
+        else: kwargs["device"]=device
+        self.pipe=pipeline("kv-press-text-generation", **kwargs)
+        self.model=self.pipe.model
+        self.tokenizer=self.pipe.tokenizer
+        self.device=device
+
+    def generate(self, context: str, question: str, policy: PolicySpec, max_new_tokens=64, do_sample=False, temperature=0.0):
+        import torch
+        press,cache=build_runtime_policy(
+            policy,
+            model_config=self.model.config,
+        )
+        if torch.cuda.is_available():
+            torch.cuda.empty_cache(); torch.cuda.reset_peak_memory_stats(); torch.cuda.synchronize()
+        kwargs={"question":question,"max_new_tokens":int(max_new_tokens),"do_sample":bool(do_sample)}
+        if press is not None: kwargs["press"]=press
+        if cache is not None: kwargs["cache"]=cache
+        if do_sample and temperature>0: kwargs["temperature"]=float(temperature)
+        t0=time.perf_counter()
+        out=self.pipe(context, **kwargs)
+        if torch.cuda.is_available(): torch.cuda.synchronize()
+        dt=time.perf_counter()-t0
+        ans=out["answer"] if isinstance(out,dict) and "answer" in out else str(out)
+        peak=int(torch.cuda.max_memory_allocated()) if torch.cuda.is_available() else 0
+        alloc=int(torch.cuda.memory_allocated()) if torch.cuda.is_available() else 0
+        return GenerationResult(ans,dt,peak,alloc)

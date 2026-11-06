@@ -1,0 +1,233 @@
+"""
+EXPERIMENT 4
+============
+
+Oracle-gap / opportunity-recovery analysis.
+
+Purpose
+-------
+Measures how much of the perfect request-aware oracle opportunity is
+captured by the learned RiskKV controller.
+
+For a resource cost C:
+
+    recovery =
+      (FullKV cost - RiskKV cost)
+      --------------------------------
+      (FullKV cost - Oracle cost)
+
+Interpretation:
+  0.0 -> recovered none of the oracle opportunity.
+  1.0 -> matched the perfect oracle.
+"""
+
+from pathlib import Path
+import numpy as np
+import pandas as pd
+
+from riskkv.synthesis_eval import (
+    load_quality_hardware,
+)
+
+
+SELECTIONS = (
+    "experiments/full_oracle_qwen3_8b/"
+    "analysis/15_adaptive_vs_heuristics/"
+    "selections.csv"
+)
+
+OUTDIR = Path(
+    "experiments/full_oracle_qwen3_8b/"
+    "analysis/18_oracle_recovery"
+)
+
+
+def recovery(full, method, oracle):
+    denominator = full - oracle
+
+    if abs(denominator) <= 1e-12:
+        return np.nan
+
+    return (
+        (full - method)
+        / denominator
+    )
+
+
+def main():
+    OUTDIR.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
+
+    hw = load_quality_hardware()
+
+    sel = pd.read_csv(
+        SELECTIONS
+    )
+
+    # Attach stable hardware cost to the selections
+    # made by experiment 1.
+    merged = sel.merge(
+        hw[
+            [
+                "request_id",
+                "policy",
+                "memory_bytes",
+                "runtime_seconds",
+                "energy_j",
+                "power_w",
+            ]
+        ],
+        on=[
+            "request_id",
+            "policy",
+        ],
+        how="inner",
+    )
+
+    # Experiment 1 contains the entire 290-request set,
+    # whereas repeated hardware profiling contains 25.
+    # We intentionally evaluate recovery on this matched
+    # 25-request hardware subset.
+    methods = (
+        merged.groupby(
+            [
+                "delta",
+                "risk_target",
+                "method",
+            ]
+        )
+        .agg(
+            memory=(
+                "memory_bytes",
+                "mean",
+            ),
+            runtime=(
+                "runtime_seconds",
+                "mean",
+            ),
+            energy=(
+                "energy_j",
+                "mean",
+            ),
+            power=(
+                "power_w",
+                "mean",
+            ),
+            requests=(
+                "request_id",
+                "nunique",
+            ),
+        )
+        .reset_index()
+    )
+
+    rows = []
+
+    for (
+        delta,
+        target,
+    ), g in methods.groupby(
+        [
+            "delta",
+            "risk_target",
+        ]
+    ):
+
+        oracle = g[
+            g["method"]
+            == "perfect_oracle"
+        ]
+
+        if len(oracle) == 0:
+            continue
+
+        oracle = oracle.iloc[0]
+
+        # FullKV cost from same requests.
+        full = hw[
+            hw.policy == "full"
+        ]
+
+        full_cost = {
+            "memory": (
+                full.memory_bytes.mean()
+            ),
+            "runtime": (
+                full.runtime_seconds.mean()
+            ),
+            "energy": (
+                full.energy_j.mean()
+            ),
+            "power": (
+                full.power_w.mean()
+            ),
+        }
+
+        for _, r in g.iterrows():
+            for metric in [
+                "memory",
+                "runtime",
+                "energy",
+                "power",
+            ]:
+                rows.append(
+                    {
+                        "delta": delta,
+                        "risk_target": target,
+                        "method": (
+                            r["method"]
+                        ),
+                        "metric": metric,
+                        "fullkv_cost": (
+                            full_cost[
+                                metric
+                            ]
+                        ),
+                        "method_cost": (
+                            r[metric]
+                        ),
+                        "oracle_cost": (
+                            oracle[
+                                metric
+                            ]
+                        ),
+                        "oracle_recovery": recovery(
+                            full_cost[
+                                metric
+                            ],
+                            r[metric],
+                            oracle[
+                                metric
+                            ],
+                        ),
+                    }
+                )
+
+    result = pd.DataFrame(
+        rows
+    )
+
+    result.to_csv(
+        OUTDIR
+        / "oracle_recovery.csv",
+        index=False,
+    )
+
+    print(
+        "\nORACLE OPPORTUNITY RECOVERY"
+    )
+
+    print(
+        result.round(4)
+        .to_string(index=False)
+    )
+
+    print(
+        "\nEXPERIMENT 4: PASS"
+    )
+
+
+if __name__ == "__main__":
+    main()

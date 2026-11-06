@@ -1,0 +1,6 @@
+task,requests,mean_pareto_points,median_pareto_points,distinct_frontiers
+hotpotqa,59,2.389830508474576,2.0,4
+multifieldqa_en,60,1.9166666666666667,2.0,12
+passage_retrieval_en,51,2.4705882352941178,3.0,4
+qasper,60,2.1333333333333333,2.0,10
+triviaqa,60,1.9833333333333334,2.0,3

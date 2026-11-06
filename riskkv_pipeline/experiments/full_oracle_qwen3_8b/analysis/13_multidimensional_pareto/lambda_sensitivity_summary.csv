@@ -1,0 +1,5 @@
+space,lambda,requests_total,requests_changed_vs_lambda0,fraction_changed_vs_lambda0
+S4_D_M_T_E,1,25,4,0.16
+S4_D_M_T_E,2,25,7,0.28
+S5_D_M_T_E_P,1,25,3,0.12
+S5_D_M_T_E_P,2,25,5,0.2

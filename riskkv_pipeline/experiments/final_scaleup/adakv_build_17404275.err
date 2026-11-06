@@ -1,0 +1,28 @@
+W0824 17:54:20.802000 232796 site-packages/torch/utils/cpp_extension.py:118] No CUDA runtime is found, using CUDA_HOME='/scratch/sr7849/conda_envs/riskkv-adakv'
+W0824 17:54:27.032000 232876 site-packages/torch/utils/cpp_extension.py:118] No CUDA runtime is found, using CUDA_HOME='/scratch/sr7849/conda_envs/riskkv-adakv'
+/scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages/setuptools/_distutils/cmd.py:90: SetuptoolsDeprecationWarning: setup.py install is deprecated.
+!!
+
+        ********************************************************************************
+        Please avoid running ``setup.py`` directly.
+        Instead, use pypa/build, pypa/installer or other
+        standards-based tools.
+
+        This deprecation is overdue, please update your project and remove deprecated
+        calls to avoid build errors in the future.
+
+        See https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html for details.
+        ********************************************************************************
+
+!!
+  self.initialize_options()
+W0824 17:54:27.167000 232876 site-packages/torch/utils/cpp_extension.py:517] There are no /scratch/sr7849/conda_envs/riskkv-adakv/bin/x86_64-conda-linux-gnu-g++ version bounds defined for CUDA version 12.8
+Traceback (most recent call last):
+  File "<stdin>", line 8, in <module>
+  File "/scratch/sr7849/KV_Cache/riskkv_pipeline/external/AdaKV/adaptive_snapkv/monkeypatch/monkeypatch.py", line 5, in <module>
+    from adaptive_snapkv.monkeypatch.fixed_mistral_hijack import fixed_mistral_flash_attn2_forward, fixed_MistralModel_forward
+  File "/scratch/sr7849/KV_Cache/riskkv_pipeline/external/AdaKV/adaptive_snapkv/monkeypatch/fixed_mistral_hijack.py", line 16, in <module>
+    from adaptive_snapkv.monkeypatch.snapkv_utils import init_snapkv
+  File "/scratch/sr7849/KV_Cache/riskkv_pipeline/external/AdaKV/adaptive_snapkv/monkeypatch/snapkv_utils.py", line 10, in <module>
+    from flash_attn import flash_attn_func
+ModuleNotFoundError: No module named 'flash_attn'

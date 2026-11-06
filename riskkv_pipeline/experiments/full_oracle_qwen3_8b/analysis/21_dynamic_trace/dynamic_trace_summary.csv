@@ -1,0 +1,3 @@
+method,static_policy,requests,quality_violation_rate,mean_memory_gb,mean_runtime_seconds,total_energy_j,mean_power_w,policy_switches,unique_policies
+adaptive,,100,0.0,1.696832,3.7661117239296438,54079.53162664765,146.8695382126168,48,4
+static,snapkv_75,100,0.04,1.06575941632,3.917188297510147,52806.90171111432,139.43536844987366,0,1

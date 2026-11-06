@@ -1,0 +1,11 @@
+scenario_a,scenario_b,requests,requests_changed,fraction_changed
+quality_critical,memory_critical,25,18,0.72
+quality_critical,latency_critical,25,9,0.36
+quality_critical,energy_critical,25,18,0.72
+quality_critical,power_capped,25,10,0.4
+memory_critical,latency_critical,25,16,0.64
+memory_critical,energy_critical,25,8,0.32
+memory_critical,power_capped,25,19,0.76
+latency_critical,energy_critical,25,17,0.68
+latency_critical,power_capped,25,9,0.36
+energy_critical,power_capped,25,16,0.64

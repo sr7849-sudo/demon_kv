@@ -1,0 +1,76 @@
+request_id,task,config,quality,quality_fullkv,degradation,nominal_saving,prediction,answers_json
+passage_retrieval_en__000004__0949343077ad,passage_retrieval_en,fullkv,1.0,1.0,0.0,0.0,"
+
+Paragraph 14.","[""Paragraph 14""]"
+passage_retrieval_en__000004__0949343077ad,passage_retrieval_en,adakv_4096,1.0,1.0,0.0,0.706506162224133,"
+
+Paragraph 14.","[""Paragraph 14""]"
+passage_retrieval_en__000004__0949343077ad,passage_retrieval_en,pyramidkv_4096,0.0,1.0,1.0,0.706506162224133,"
+
+Paragraph 18 or Paragraph 24
+
+(Note: The abstract does not provide enough information to determine which paragraph it is from","[""Paragraph 14""]"
+passage_retrieval_en__000004__0949343077ad,passage_retrieval_en,l2norm_4096,0.0,1.0,1.0,0.706506162224133,"
+
+Paragraph 11:
+
+(Note: I'm assuming the abstract is about magnetotactic bacteria and their magnetosomes, as","[""Paragraph 14""]"
+passage_retrieval_en__000004__0949343077ad,passage_retrieval_en,snapkv_4096,1.0,1.0,0.0,0.706506162224133,"
+
+Paragraph 14.","[""Paragraph 14""]"
+passage_retrieval_en__000004__0949343077ad,passage_retrieval_en,l2norm_2048,0.0,1.0,1.0,0.8532530811120664,"
+
+Paragraph 11: The text discusses the arrangement of the magnetic domains in magnetite (Fe3O4) crystals. The magnetic","[""Paragraph 14""]"
+passage_retrieval_en__000004__0949343077ad,passage_retrieval_en,adakv_2048,1.0,1.0,0.0,0.8532530811120664,"
+
+Paragraph 14.","[""Paragraph 14""]"
+passage_retrieval_en__000004__0949343077ad,passage_retrieval_en,pyramidkv_2048,1.0,1.0,0.0,0.8532530811120664,"
+
+Paragraph 14.","[""Paragraph 14""]"
+passage_retrieval_en__000004__0949343077ad,passage_retrieval_en,snapkv_2048,1.0,1.0,0.0,0.8532530811120664,"
+
+Paragraph 14.","[""Paragraph 14""]"
+passage_retrieval_en__000004__0949343077ad,passage_retrieval_en,pyramidkv_1024,1.0,1.0,0.0,0.9266265405560332,"
+
+Paragraph 14.","[""Paragraph 14""]"
+passage_retrieval_en__000004__0949343077ad,passage_retrieval_en,adakv_1024,1.0,1.0,0.0,0.9266265405560332,"
+
+Paragraph 14.","[""Paragraph 14""]"
+passage_retrieval_en__000004__0949343077ad,passage_retrieval_en,l2norm_1024,0.0,1.0,1.0,0.9266265405560332,"
+
+Paragraph 11: The West Indian U-19 cricket team has had many captains over the years, with some leading the team to","[""Paragraph 14""]"
+passage_retrieval_en__000004__0949343077ad,passage_retrieval_en,snapkv_1024,1.0,1.0,0.0,0.9266265405560332,"
+
+Paragraph 14.","[""Paragraph 14""]"
+passage_retrieval_en__000004__0949343077ad,passage_retrieval_en,l2norm_512,0.0,1.0,1.0,0.9633132702780166,"
+
+Paragraph 1
+
+This paragraph is about the West Indies cricket team and the captains who have led it in U-19 cricket","[""Paragraph 14""]"
+passage_retrieval_en__000004__0949343077ad,passage_retrieval_en,pyramidkv_512,0.0,1.0,1.0,0.9633132702780166,"
+
+Paragraph 19
+
+Explanation:
+
+The abstract discusses the size and arrangement of magnetotactic crystals, which are","[""Paragraph 14""]"
+passage_retrieval_en__000004__0949343077ad,passage_retrieval_en,adakv_512,0.0,1.0,1.0,0.9633132702780166,"
+
+Paragraph 18.","[""Paragraph 14""]"
+passage_retrieval_en__000004__0949343077ad,passage_retrieval_en,snapkv_512,1.0,1.0,0.0,0.9633132702780166,"
+
+Paragraph 14.","[""Paragraph 14""]"
+passage_retrieval_en__000004__0949343077ad,passage_retrieval_en,pyramidkv_256,0.0,1.0,1.0,0.9816566351390084,"
+
+Paragraph 19.","[""Paragraph 14""]"
+passage_retrieval_en__000004__0949343077ad,passage_retrieval_en,adakv_256,1.0,1.0,0.0,0.9816566351390084,"
+
+Paragraph 14.","[""Paragraph 14""]"
+passage_retrieval_en__000004__0949343077ad,passage_retrieval_en,l2norm_256,0.0,1.0,1.0,0.9816566351390084,"
+
+Answer:
+
+I cannot provide an answer without the specific paragraph number or title. However, I can give you a general idea of what each","[""Paragraph 14""]"
+passage_retrieval_en__000004__0949343077ad,passage_retrieval_en,snapkv_256,0.0,1.0,1.0,0.9816566351390084,"
+
+Paragraph 18.","[""Paragraph 14""]"

@@ -1,0 +1,16 @@
+{
+  "fragility_definition": "maximum positive degradation slope",
+  "family_aggregation": "maximum across ordered SnapKV and KNorm families",
+  "cliff_definition": "maximum adjacent positive degradation jump >= 0.25",
+  "cliff_threshold": 0.25,
+  "catastrophic_threshold": 0.25,
+  "selection_basis": {
+    "fragility": "semantic worst-case cliff interpretation plus strong correlation with maximum degradation and stable task-wise behavior",
+    "cliff_threshold": "threshold sensitivity sweep over [0.10,0.15,0.20,0.25,0.30,0.40]; 0.25 had Jaccard 0.9402, precision 1.0, recall 0.9402"
+  },
+  "secondary_metrics": [
+    "maximum adjacent jump",
+    "degradation AUC",
+    "family-specific fragility"
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "model_tokenizer": "Qwen/Qwen3-8B",
+  "longbench_revision": "c05c7428de23cd8ad4df6ed748b118c602022972",
+  "seed": 42,
+  "min_tokens": 1500,
+  "max_tokens": 12000,
+  "per_task_target": 60,
+  "tasks": {
+    "qasper": {
+      "category": "single_doc_qa",
+      "metric": "official_longbench",
+      "source_path": "/scratch/sr7849/.cache/huggingface/hub/datasets--zai-org--LongBench/snapshots/c05c7428de23cd8ad4df6ed748b118c602022972/qasper/test-00000-of-00001.parquet",
+      "available_rows": 200,
+      "eligible_rows": 196,
+      "selected_rows": 60,
+      "min_selected_tokens": 2341,
+      "max_selected_tokens": 10220
+    },
+    "hotpotqa": {
+      "category": "multi_doc_qa",
+      "metric": "official_longbench",
+      "source_path": "/scratch/sr7849/.cache/huggingface/hub/datasets--zai-org--LongBench/snapshots/c05c7428de23cd8ad4df6ed748b118c602022972/hotpotqa/test-00000-of-00001.parquet",
+      "available_rows": 200,
+      "eligible_rows": 59,
+      "selected_rows": 59,
+      "min_selected_tokens": 1844,
+      "max_selected_tokens": 11970
+    },
+    "passage_retrieval_en": {
+      "category": "retrieval",
+      "metric": "official_longbench",
+      "source_path": "/scratch/sr7849/.cache/huggingface/hub/datasets--zai-org--LongBench/snapshots/c05c7428de23cd8ad4df6ed748b118c602022972/passage_retrieval_en/test-00000-of-00001.parquet",
+      "available_rows": 200,
+      "eligible_rows": 51,
+      "selected_rows": 51,
+      "min_selected_tokens": 10318,
+      "max_selected_tokens": 11992
+    },
+    "multifieldqa_en": {
+      "category": "structured_qa",
+      "metric": "official_longbench",
+      "source_path": "/scratch/sr7849/.cache/huggingface/hub/datasets--zai-org--LongBench/snapshots/c05c7428de23cd8ad4df6ed748b118c602022972/multifieldqa_en/test-00000-of-00001.parquet",
+      "available_rows": 150,
+      "eligible_rows": 133,
+      "selected_rows": 60,
+      "min_selected_tokens": 1682,
+      "max_selected_tokens": 11552
+    },
+    "triviaqa": {
+      "category": "long_context_qa",
+      "metric": "official_longbench",
+      "source_path": "/scratch/sr7849/.cache/huggingface/hub/datasets--zai-org--LongBench/snapshots/c05c7428de23cd8ad4df6ed748b118c602022972/triviaqa/test-00000-of-00001.parquet",
+      "available_rows": 200,
+      "eligible_rows": 96,
+      "selected_rows": 60,
+      "min_selected_tokens": 1518,
+      "max_selected_tokens": 11994
+    }
+  },
+  "total_requests": 290
+}

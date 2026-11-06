@@ -1,0 +1,58 @@
+============================================================
+AdaKV build environment
+============================================================
+HOST:
+bn025
+
+PYTHON:
+/scratch/sr7849/conda_envs/riskkv-adakv/bin/python
+Python 3.11.15
+
+NVCC:
+/scratch/sr7849/conda_envs/riskkv-adakv/bin/nvcc
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2025 NVIDIA Corporation
+Built on Fri_Feb_21_20:23:50_PST_2025
+Cuda compilation tools, release 12.8, V12.8.93
+Build cuda_12.8.r12.8/compiler.35583870_0
+
+CC:
+/scratch/sr7849/conda_envs/riskkv-adakv/bin/x86_64-conda-linux-gnu-gcc
+x86_64-conda-linux-gnu-gcc (conda-forge gcc 12.4.0-2) 12.4.0
+
+CXX:
+/scratch/sr7849/conda_envs/riskkv-adakv/bin/x86_64-conda-linux-gnu-g++
+x86_64-conda-linux-gnu-g++ (conda-forge gcc 12.4.0-2) 12.4.0
+
+TORCH:
+Torch: 2.8.0+cu128
+Torch CUDA: 12.8
+Torch path: /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages/torch/__init__.py
+CUDA_HOME: /scratch/sr7849/conda_envs/riskkv-adakv
+CC: /scratch/sr7849/conda_envs/riskkv-adakv/bin/x86_64-conda-linux-gnu-gcc
+CXX: /scratch/sr7849/conda_envs/riskkv-adakv/bin/x86_64-conda-linux-gnu-g++
+TORCH_CUDA_ARCH_LIST: 8.0
+
+============================================================
+Building AdaKV
+============================================================
+cd csrc && make
+make[1]: Entering directory '/scratch/sr7849/KV_Cache/riskkv_pipeline/external/AdaKV/csrc'
+python build.py install
+running install
+running build
+running build_ext
+building 'tiny_api_cuda' extension
+creating /scratch/sr7849/KV_Cache/riskkv_pipeline/external/AdaKV/csrc/build/temp.linux-x86_64-cpython-311/csrc
+[1/1] /scratch/sr7849/conda_envs/riskkv-adakv/bin/nvcc --generate-dependencies-with-compile --dependency-output /scratch/sr7849/KV_Cache/riskkv_pipeline/external/AdaKV/csrc/build/temp.linux-x86_64-cpython-311/csrc/cuda_api.o.d -I/scratch/sr7849/KV_Cache/riskkv_pipeline/external/AdaKV/csrc/csrc -I/scratch/sr7849/KV_Cache/riskkv_pipeline/external/AdaKV/csrc/include -I/scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages/torch/include -I/scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages/torch/include/torch/csrc/api/include -I/scratch/sr7849/conda_envs/riskkv-adakv/include -I/scratch/sr7849/conda_envs/riskkv-adakv/include/python3.11 -c -c /scratch/sr7849/KV_Cache/riskkv_pipeline/external/AdaKV/csrc/csrc/cuda_api.cu -o /scratch/sr7849/KV_Cache/riskkv_pipeline/external/AdaKV/csrc/build/temp.linux-x86_64-cpython-311/csrc/cuda_api.o -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr --compiler-options ''"'"'-fPIC'"'"'' -O3 -std=c++17 -U__CUDA_NO_HALF_OPERATORS__ --use_fast_math -lineinfo --ptxas-options=-v --ptxas-options=-O2 -U__CUDA_NO_HALF_OPERATORS__ -U__CUDA_NO_HALF_CONVERSIONS__ -U__CUDA_NO_HALF2_OPERATORS__ -U__CUDA_NO_BFLOAT16_CONVERSIONS__ --expt-relaxed-constexpr --expt-extended-lambda --use_fast_math -gencode arch=compute_80,code=sm_80 -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1018"' -DTORCH_EXTENSION_NAME=tiny_api_cuda -ccbin /scratch/sr7849/conda_envs/riskkv-adakv/bin/x86_64-conda-linux-gnu-gcc
+FAILED: [code=1] /scratch/sr7849/KV_Cache/riskkv_pipeline/external/AdaKV/csrc/build/temp.linux-x86_64-cpython-311/csrc/cuda_api.o 
+/scratch/sr7849/conda_envs/riskkv-adakv/bin/nvcc --generate-dependencies-with-compile --dependency-output /scratch/sr7849/KV_Cache/riskkv_pipeline/external/AdaKV/csrc/build/temp.linux-x86_64-cpython-311/csrc/cuda_api.o.d -I/scratch/sr7849/KV_Cache/riskkv_pipeline/external/AdaKV/csrc/csrc -I/scratch/sr7849/KV_Cache/riskkv_pipeline/external/AdaKV/csrc/include -I/scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages/torch/include -I/scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages/torch/include/torch/csrc/api/include -I/scratch/sr7849/conda_envs/riskkv-adakv/include -I/scratch/sr7849/conda_envs/riskkv-adakv/include/python3.11 -c -c /scratch/sr7849/KV_Cache/riskkv_pipeline/external/AdaKV/csrc/csrc/cuda_api.cu -o /scratch/sr7849/KV_Cache/riskkv_pipeline/external/AdaKV/csrc/build/temp.linux-x86_64-cpython-311/csrc/cuda_api.o -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr --compiler-options ''"'"'-fPIC'"'"'' -O3 -std=c++17 -U__CUDA_NO_HALF_OPERATORS__ --use_fast_math -lineinfo --ptxas-options=-v --ptxas-options=-O2 -U__CUDA_NO_HALF_OPERATORS__ -U__CUDA_NO_HALF_CONVERSIONS__ -U__CUDA_NO_HALF2_OPERATORS__ -U__CUDA_NO_BFLOAT16_CONVERSIONS__ --expt-relaxed-constexpr --expt-extended-lambda --use_fast_math -gencode arch=compute_80,code=sm_80 -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1018"' -DTORCH_EXTENSION_NAME=tiny_api_cuda -ccbin /scratch/sr7849/conda_envs/riskkv-adakv/bin/x86_64-conda-linux-gnu-gcc
+nvcc warning : incompatible redefinition for option 'compiler-bindir', the last value of this option was used
+In file included from /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages/torch/include/ATen/cuda/CUDAContext.h:3,
+                 from /scratch/sr7849/KV_Cache/riskkv_pipeline/external/AdaKV/csrc/csrc/cuda_api.cu:1:
+/scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages/torch/include/ATen/cuda/CUDAContextLight.h:8:10: fatal error: cusparse.h: No such file or directory
+    8 | #include <cusparse.h>
+      |          ^~~~~~~~~~~~
+compilation terminated.
+ninja: build stopped: subcommand failed.
+make[1]: Leaving directory '/scratch/sr7849/KV_Cache/riskkv_pipeline/external/AdaKV/csrc'

@@ -1,0 +1,4 @@
+space_a,space_b,requests_total,requests_changed,fraction_frontier_changed,mean_points_a,mean_points_b
+S2_D_M,S3_D_M_T,25,23,0.92,1.56,3.6
+S3_D_M_T,S4_D_M_T_E,25,6,0.24,3.6,3.88
+S4_D_M_T_E,S5_D_M_T_E_P,25,13,0.52,3.88,4.8

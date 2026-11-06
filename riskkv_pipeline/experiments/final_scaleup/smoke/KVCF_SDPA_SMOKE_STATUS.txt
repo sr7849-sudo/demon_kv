@@ -1,0 +1,13 @@
+FullKV + Mistral-7B-Instruct-v0.2 + Qasper:
+PASS
+
+PyramidKV + 512 retained prompt tokens:
+PASS
+
+AdaKV + 512:
+NOT TESTED SUCCESSFULLY UNDER SDPA.
+KVCF AdaKV uses FlashAttention-specific forward implementation and therefore
+requires FlashAttention2.
+
+Job:
+17517102

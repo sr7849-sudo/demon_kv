@@ -1,0 +1,27 @@
+{
+  "requests": 1331,
+  "delta": 0.1,
+  "epsilon": 0.05,
+  "violation_rate": 0.0,
+  "mean_nominal_saving": 0.6566656830013391,
+  "fallback_rate": 0.1720510894064613,
+  "mean_quality": 0.5143755021752787,
+  "selection_counts": {
+    "adakv_256": 275,
+    "fullkv": 229,
+    "snapkv_2048": 167,
+    "snapkv_512": 129,
+    "snapkv_4096": 128,
+    "snapkv_1024": 125,
+    "adakv_512": 98,
+    "snapkv_256": 43,
+    "adakv_2048": 39,
+    "adakv_1024": 38,
+    "adakv_4096": 19,
+    "pyramidkv_512": 16,
+    "pyramidkv_2048": 11,
+    "pyramidkv_4096": 10,
+    "pyramidkv_1024": 3,
+    "pyramidkv_256": 1
+  }
+}

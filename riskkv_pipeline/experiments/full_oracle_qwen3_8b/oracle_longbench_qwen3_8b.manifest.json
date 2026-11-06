@@ -1,0 +1,89 @@
+{
+  "created_utc": "2026-08-12T00:41:48.303990+00:00",
+  "input": "/scratch/sr7849/KV_Cache/riskkv_pipeline/experiments/full_oracle_qwen3_8b/requests.jsonl",
+  "input_sha256": "b84c7a14b916369c6df95fbb0f793ad8f7b785d70ac1c20bb12888a4f5868637",
+  "config": "/scratch/sr7849/KV_Cache/riskkv_pipeline/experiments/full_oracle_qwen3_8b/config.yaml",
+  "config_sha256": "a15c80ba75ddab4267d79f4e1ced11b7a350b7c27de323157e63e983d8da90ed",
+  "n_requests": 290,
+  "model": "Qwen/Qwen3-8B",
+  "policies": [
+    {
+      "name": "full",
+      "family": "full",
+      "compression_ratio": 0.0,
+      "memory_ratio": 1.0,
+      "nbits": null,
+      "backend": null
+    },
+    {
+      "name": "snapkv_25",
+      "family": "snapkv",
+      "compression_ratio": 0.25,
+      "memory_ratio": 0.75,
+      "nbits": null,
+      "backend": null
+    },
+    {
+      "name": "snapkv_50",
+      "family": "snapkv",
+      "compression_ratio": 0.5,
+      "memory_ratio": 0.5,
+      "nbits": null,
+      "backend": null
+    },
+    {
+      "name": "snapkv_75",
+      "family": "snapkv",
+      "compression_ratio": 0.75,
+      "memory_ratio": 0.25,
+      "nbits": null,
+      "backend": null
+    },
+    {
+      "name": "knorm_25",
+      "family": "knorm",
+      "compression_ratio": 0.25,
+      "memory_ratio": 0.75,
+      "nbits": null,
+      "backend": null
+    },
+    {
+      "name": "knorm_50",
+      "family": "knorm",
+      "compression_ratio": 0.5,
+      "memory_ratio": 0.5,
+      "nbits": null,
+      "backend": null
+    },
+    {
+      "name": "knorm_75",
+      "family": "knorm",
+      "compression_ratio": 0.75,
+      "memory_ratio": 0.25,
+      "nbits": null,
+      "backend": null
+    },
+    {
+      "name": "quant4",
+      "family": "quantized",
+      "compression_ratio": 0.0,
+      "memory_ratio": 0.25,
+      "nbits": 4,
+      "backend": "quanto"
+    }
+  ],
+  "python": "3.11.15",
+  "torch": "2.13.0+cu130",
+  "transformers": "5.2.0",
+  "cuda_available": true,
+  "torch_cuda": "13.0",
+  "gpu": "NVIDIA A100-SXM4-80GB",
+  "gpu_capability": [
+    8,
+    0
+  ],
+  "static_model_gpu_bytes": 16383587328,
+  "git_commit": null,
+  "longbench_maxlen_file": "/scratch/sr7849/KV_Cache/riskkv_pipeline/third_party/longbench/dataset2maxlen.json",
+  "longbench_maxlen_sha256": "72966b3c0933e214591637fb085798c5e687ebff4ddaab5d99bbc31120532022"
+}

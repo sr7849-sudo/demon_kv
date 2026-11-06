@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.venv/
+results/*.csv
+results/*.pkl
+figures/*.png
+!data/requests.example.jsonl

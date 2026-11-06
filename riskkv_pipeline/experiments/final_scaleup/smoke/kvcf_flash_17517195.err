@@ -1,0 +1,33 @@
+WARNING: Skipping flash-attn as it is not installed.
+  error: subprocess-exited-with-error
+  
+  × Getting requirements to build wheel did not run successfully.
+  │ exit code: 1
+  ╰─> [23 lines of output]
+      /scratch/sr7849/tmp/kvcf_flash_17517195/pip-build-env-auxsulc8/overlay/lib/python3.11/site-packages/setuptools/_vendor/wheel/bdist_wheel.py:4: FutureWarning: The 'wheel' package is no longer the canonical location of the 'bdist_wheel' command, and will be removed in a future release. Please update to setuptools v70.1 or later which contains an integrated version of this command.
+        warn(
+      Traceback (most recent call last):
+        File "/scratch/sr7849/conda_envs/riskkv-kvcf/lib/python3.11/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 389, in <module>
+          main()
+        File "/scratch/sr7849/conda_envs/riskkv-kvcf/lib/python3.11/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 373, in main
+          json_out["return_val"] = hook(**hook_input["kwargs"])
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/scratch/sr7849/conda_envs/riskkv-kvcf/lib/python3.11/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 143, in get_requires_for_build_wheel
+          return hook(config_settings)
+                 ^^^^^^^^^^^^^^^^^^^^^
+        File "/scratch/sr7849/tmp/kvcf_flash_17517195/pip-build-env-auxsulc8/overlay/lib/python3.11/site-packages/setuptools/build_meta.py", line 333, in get_requires_for_build_wheel
+          return self._get_build_requires(config_settings, requirements=[])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/scratch/sr7849/tmp/kvcf_flash_17517195/pip-build-env-auxsulc8/overlay/lib/python3.11/site-packages/setuptools/build_meta.py", line 301, in _get_build_requires
+          self.run_setup()
+        File "/scratch/sr7849/tmp/kvcf_flash_17517195/pip-build-env-auxsulc8/overlay/lib/python3.11/site-packages/setuptools/build_meta.py", line 520, in run_setup
+          super().run_setup(setup_script=setup_script)
+        File "/scratch/sr7849/tmp/kvcf_flash_17517195/pip-build-env-auxsulc8/overlay/lib/python3.11/site-packages/setuptools/build_meta.py", line 317, in run_setup
+          exec(code, locals())  # noqa: S102 # exec is intentional here
+          ^^^^^^^^^^^^^^^^^^^^
+        File "<string>", line 22, in <module>
+      ModuleNotFoundError: No module named 'torch'
+      [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+ERROR: Failed to build 'flash-attn' when getting requirements to build wheel

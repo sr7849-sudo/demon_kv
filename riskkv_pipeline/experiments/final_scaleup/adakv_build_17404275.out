@@ -1,0 +1,186 @@
+============================================================
+AdaKV build environment
+============================================================
+HOST:
+bn025
+
+PYTHON:
+/scratch/sr7849/conda_envs/riskkv-adakv/bin/python
+Python 3.11.15
+
+NVCC:
+/scratch/sr7849/conda_envs/riskkv-adakv/bin/nvcc
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2025 NVIDIA Corporation
+Built on Fri_Feb_21_20:23:50_PST_2025
+Cuda compilation tools, release 12.8, V12.8.93
+Build cuda_12.8.r12.8/compiler.35583870_0
+
+CC:
+/scratch/sr7849/conda_envs/riskkv-adakv/bin/x86_64-conda-linux-gnu-gcc
+x86_64-conda-linux-gnu-gcc (conda-forge gcc 12.4.0-2) 12.4.0
+
+CXX:
+/scratch/sr7849/conda_envs/riskkv-adakv/bin/x86_64-conda-linux-gnu-g++
+x86_64-conda-linux-gnu-g++ (conda-forge gcc 12.4.0-2) 12.4.0
+
+TORCH:
+Torch: 2.8.0+cu128
+Torch CUDA: 12.8
+Torch path: /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages/torch/__init__.py
+CUDA_HOME: /scratch/sr7849/conda_envs/riskkv-adakv
+CC: /scratch/sr7849/conda_envs/riskkv-adakv/bin/x86_64-conda-linux-gnu-gcc
+CXX: /scratch/sr7849/conda_envs/riskkv-adakv/bin/x86_64-conda-linux-gnu-g++
+TORCH_CUDA_ARCH_LIST: 8.0
+
+============================================================
+Building AdaKV
+============================================================
+cd csrc && make
+make[1]: Entering directory '/scratch/sr7849/KV_Cache/riskkv_pipeline/external/AdaKV/csrc'
+python build.py install
+running install
+running build
+running build_ext
+building 'tiny_api_cuda' extension
+[1/1] /scratch/sr7849/conda_envs/riskkv-adakv/bin/nvcc --generate-dependencies-with-compile --dependency-output /scratch/sr7849/KV_Cache/riskkv_pipeline/external/AdaKV/csrc/build/temp.linux-x86_64-cpython-311/csrc/cuda_api.o.d -I/scratch/sr7849/KV_Cache/riskkv_pipeline/external/AdaKV/csrc/csrc -I/scratch/sr7849/KV_Cache/riskkv_pipeline/external/AdaKV/csrc/include -I/scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages/torch/include -I/scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages/torch/include/torch/csrc/api/include -I/scratch/sr7849/conda_envs/riskkv-adakv/include -I/scratch/sr7849/conda_envs/riskkv-adakv/include/python3.11 -c -c /scratch/sr7849/KV_Cache/riskkv_pipeline/external/AdaKV/csrc/csrc/cuda_api.cu -o /scratch/sr7849/KV_Cache/riskkv_pipeline/external/AdaKV/csrc/build/temp.linux-x86_64-cpython-311/csrc/cuda_api.o -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr --compiler-options ''"'"'-fPIC'"'"'' -O3 -std=c++17 -U__CUDA_NO_HALF_OPERATORS__ --use_fast_math -lineinfo --ptxas-options=-v --ptxas-options=-O2 -U__CUDA_NO_HALF_OPERATORS__ -U__CUDA_NO_HALF_CONVERSIONS__ -U__CUDA_NO_HALF2_OPERATORS__ -U__CUDA_NO_BFLOAT16_CONVERSIONS__ --expt-relaxed-constexpr --expt-extended-lambda --use_fast_math -gencode arch=compute_80,code=sm_80 -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1018"' -DTORCH_EXTENSION_NAME=tiny_api_cuda -ccbin /scratch/sr7849/conda_envs/riskkv-adakv/bin/x86_64-conda-linux-gnu-gcc
+nvcc warning : incompatible redefinition for option 'compiler-bindir', the last value of this option was used
+ptxas info    : 11 bytes gmem, 88 bytes cmem[4]
+ptxas info    : Compiling entry function '_Z26update_flatten_view_kernelIN3c108BFloat16ELi1EEvPT_S3_S3_PiS4_i' for 'sm_80'
+ptxas info    : Function properties for _Z26update_flatten_view_kernelIN3c108BFloat16ELi1EEvPT_S3_S3_PiS4_i
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 32 registers, used 0 barriers, 396 bytes cmem[0]
+ptxas info    : Compile time = 10.267 ms
+ptxas info    : Compiling entry function '_Z26update_flatten_view_kernelIN3c104HalfELi1EEvPT_S3_S3_PiS4_i' for 'sm_80'
+ptxas info    : Function properties for _Z26update_flatten_view_kernelIN3c104HalfELi1EEvPT_S3_S3_PiS4_i
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 32 registers, used 0 barriers, 396 bytes cmem[0]
+ptxas info    : Compile time = 8.537 ms
+creating build/lib.linux-x86_64-cpython-311
+/scratch/sr7849/conda_envs/riskkv-adakv/bin/x86_64-conda-linux-gnu-g++ -fvisibility-inlines-hidden -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /scratch/sr7849/conda_envs/riskkv-adakv/include -I/scratch/sr7849/conda_envs/riskkv-adakv/targets/x86_64-linux/include -L/scratch/sr7849/conda_envs/riskkv-adakv/targets/x86_64-linux/lib -L/scratch/sr7849/conda_envs/riskkv-adakv/targets/x86_64-linux/lib/stubs -DNDEBUG -D_FORTIFY_SOURCE=2 -O2 -isystem /scratch/sr7849/conda_envs/riskkv-adakv/include -I/scratch/sr7849/conda_envs/riskkv-adakv/targets/x86_64-linux/include -L/scratch/sr7849/conda_envs/riskkv-adakv/targets/x86_64-linux/lib -L/scratch/sr7849/conda_envs/riskkv-adakv/targets/x86_64-linux/lib/stubs -pthread -B /scratch/sr7849/conda_envs/riskkv-adakv/compiler_compat -shared -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,--allow-shlib-undefined -Wl,-rpath,/scratch/sr7849/conda_envs/riskkv-adakv/lib -Wl,-rpath-link,/scratch/sr7849/conda_envs/riskkv-adakv/lib -L/scratch/sr7849/conda_envs/riskkv-adakv/lib -L/scratch/sr7849/conda_envs/riskkv-adakv/targets/x86_64-linux/lib -L/scratch/sr7849/conda_envs/riskkv-adakv/targets/x86_64-linux/lib/stubs -fvisibility-inlines-hidden -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /scratch/sr7849/conda_envs/riskkv-adakv/include -I/scratch/sr7849/conda_envs/riskkv-adakv/targets/x86_64-linux/include -L/scratch/sr7849/conda_envs/riskkv-adakv/targets/x86_64-linux/lib -L/scratch/sr7849/conda_envs/riskkv-adakv/targets/x86_64-linux/lib/stubs -DNDEBUG -D_FORTIFY_SOURCE=2 -O2 -isystem /scratch/sr7849/conda_envs/riskkv-adakv/include -I/scratch/sr7849/conda_envs/riskkv-adakv/targets/x86_64-linux/include -L/scratch/sr7849/conda_envs/riskkv-adakv/targets/x86_64-linux/lib -L/scratch/sr7849/conda_envs/riskkv-adakv/targets/x86_64-linux/lib/stubs /scratch/sr7849/KV_Cache/riskkv_pipeline/external/AdaKV/csrc/build/temp.linux-x86_64-cpython-311/csrc/cuda_api.o -L/scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages/torch/lib -L/scratch/sr7849/conda_envs/riskkv-adakv/lib -lc10 -ltorch -ltorch_cpu -ltorch_python -lcudart -lc10_cuda -ltorch_cuda -o build/lib.linux-x86_64-cpython-311/tiny_api_cuda.cpython-311-x86_64-linux-gnu.so
+running install_lib
+copying build/lib.linux-x86_64-cpython-311/tiny_api_cuda.cpython-311-x86_64-linux-gnu.so -> /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages
+running install_egg_info
+running egg_info
+creating tiny_pkg.egg-info
+writing tiny_pkg.egg-info/PKG-INFO
+writing dependency_links to tiny_pkg.egg-info/dependency_links.txt
+writing requirements to tiny_pkg.egg-info/requires.txt
+writing top-level names to tiny_pkg.egg-info/top_level.txt
+writing manifest file 'tiny_pkg.egg-info/SOURCES.txt'
+reading manifest file 'tiny_pkg.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file 'tiny_pkg.egg-info/SOURCES.txt'
+Copying tiny_pkg.egg-info to /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages/tiny_pkg-0.0.0-py3.11.egg-info
+running install_scripts
+make[1]: Leaving directory '/scratch/sr7849/KV_Cache/riskkv_pipeline/external/AdaKV/csrc'
+pip install -e .
+Obtaining file:///scratch/sr7849/KV_Cache/riskkv_pipeline/external/AdaKV
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Collecting rouge (from adakv==0.0.1)
+  Using cached rouge-1.0.1-py3-none-any.whl.metadata (4.1 kB)
+Requirement already satisfied: tokenizers in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from adakv==0.0.1) (0.19.1)
+Requirement already satisfied: rouge_score in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from adakv==0.0.1) (0.1.2)
+Requirement already satisfied: numpy==1.26.0 in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from adakv==0.0.1) (1.26.0)
+Requirement already satisfied: jieba==0.42.1 in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from adakv==0.0.1) (0.42.1)
+Requirement already satisfied: datasets in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from adakv==0.0.1) (2.19.2)
+Requirement already satisfied: accelerate in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from adakv==0.0.1) (1.14.0)
+Collecting tqdm==4.66.1 (from adakv==0.0.1)
+  Downloading tqdm-4.66.1-py3-none-any.whl.metadata (57 kB)
+Collecting icetk==0.0.7 (from adakv==0.0.1)
+  Downloading icetk-0.0.7-py3-none-any.whl.metadata (2.3 kB)
+Requirement already satisfied: transformers==4.44.2 in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from adakv==0.0.1) (4.44.2)
+Requirement already satisfied: requests in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from icetk==0.0.7->adakv==0.0.1) (2.34.2)
+Requirement already satisfied: torchvision in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from icetk==0.0.7->adakv==0.0.1) (0.23.0+cu128)
+Requirement already satisfied: sentencepiece in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from icetk==0.0.7->adakv==0.0.1) (0.2.2)
+Requirement already satisfied: filelock in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from icetk==0.0.7->adakv==0.0.1) (3.32.3)
+Collecting protobuf<3.19 (from icetk==0.0.7->adakv==0.0.1)
+  Downloading protobuf-3.18.3-py2.py3-none-any.whl.metadata (777 bytes)
+Requirement already satisfied: huggingface-hub<1.0,>=0.23.2 in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from transformers==4.44.2->adakv==0.0.1) (0.36.2)
+Requirement already satisfied: packaging>=20.0 in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from transformers==4.44.2->adakv==0.0.1) (26.3)
+Requirement already satisfied: pyyaml>=5.1 in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from transformers==4.44.2->adakv==0.0.1) (6.0.3)
+Requirement already satisfied: regex!=2019.12.17 in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from transformers==4.44.2->adakv==0.0.1) (2026.7.19)
+Requirement already satisfied: safetensors>=0.4.1 in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from transformers==4.44.2->adakv==0.0.1) (0.8.0)
+Requirement already satisfied: fsspec>=2023.5.0 in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from huggingface-hub<1.0,>=0.23.2->transformers==4.44.2->adakv==0.0.1) (2024.3.1)
+Requirement already satisfied: hf-xet<2.0.0,>=1.1.3 in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from huggingface-hub<1.0,>=0.23.2->transformers==4.44.2->adakv==0.0.1) (1.6.0)
+Requirement already satisfied: typing-extensions>=3.7.4.3 in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from huggingface-hub<1.0,>=0.23.2->transformers==4.44.2->adakv==0.0.1) (4.16.0)
+Requirement already satisfied: psutil in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from accelerate->adakv==0.0.1) (7.2.2)
+Requirement already satisfied: torch>=2.0.0 in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from accelerate->adakv==0.0.1) (2.8.0+cu128)
+Requirement already satisfied: sympy>=1.13.3 in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from torch>=2.0.0->accelerate->adakv==0.0.1) (1.14.0)
+Requirement already satisfied: networkx in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from torch>=2.0.0->accelerate->adakv==0.0.1) (3.6.1)
+Requirement already satisfied: jinja2 in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from torch>=2.0.0->accelerate->adakv==0.0.1) (3.1.6)
+Requirement already satisfied: nvidia-cuda-nvrtc-cu12==12.8.93 in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from torch>=2.0.0->accelerate->adakv==0.0.1) (12.8.93)
+Requirement already satisfied: nvidia-cuda-runtime-cu12==12.8.90 in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from torch>=2.0.0->accelerate->adakv==0.0.1) (12.8.90)
+Requirement already satisfied: nvidia-cuda-cupti-cu12==12.8.90 in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from torch>=2.0.0->accelerate->adakv==0.0.1) (12.8.90)
+Requirement already satisfied: nvidia-cudnn-cu12==9.10.2.21 in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from torch>=2.0.0->accelerate->adakv==0.0.1) (9.10.2.21)
+Requirement already satisfied: nvidia-cublas-cu12==12.8.4.1 in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from torch>=2.0.0->accelerate->adakv==0.0.1) (12.8.4.1)
+Requirement already satisfied: nvidia-cufft-cu12==11.3.3.83 in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from torch>=2.0.0->accelerate->adakv==0.0.1) (11.3.3.83)
+Requirement already satisfied: nvidia-curand-cu12==10.3.9.90 in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from torch>=2.0.0->accelerate->adakv==0.0.1) (10.3.9.90)
+Requirement already satisfied: nvidia-cusolver-cu12==11.7.3.90 in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from torch>=2.0.0->accelerate->adakv==0.0.1) (11.7.3.90)
+Requirement already satisfied: nvidia-cusparse-cu12==12.5.8.93 in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from torch>=2.0.0->accelerate->adakv==0.0.1) (12.5.8.93)
+Requirement already satisfied: nvidia-cusparselt-cu12==0.7.1 in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from torch>=2.0.0->accelerate->adakv==0.0.1) (0.7.1)
+Requirement already satisfied: nvidia-nccl-cu12==2.27.3 in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from torch>=2.0.0->accelerate->adakv==0.0.1) (2.27.3)
+Requirement already satisfied: nvidia-nvtx-cu12==12.8.90 in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from torch>=2.0.0->accelerate->adakv==0.0.1) (12.8.90)
+Requirement already satisfied: nvidia-nvjitlink-cu12==12.8.93 in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from torch>=2.0.0->accelerate->adakv==0.0.1) (12.8.93)
+Requirement already satisfied: nvidia-cufile-cu12==1.13.1.3 in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from torch>=2.0.0->accelerate->adakv==0.0.1) (1.13.1.3)
+Requirement already satisfied: triton==3.4.0 in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from torch>=2.0.0->accelerate->adakv==0.0.1) (3.4.0)
+Requirement already satisfied: setuptools>=40.8.0 in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from triton==3.4.0->torch>=2.0.0->accelerate->adakv==0.0.1) (83.0.0)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from sympy>=1.13.3->torch>=2.0.0->accelerate->adakv==0.0.1) (1.3.0)
+Requirement already satisfied: pyarrow>=12.0.0 in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from datasets->adakv==0.0.1) (25.0.1)
+Requirement already satisfied: pyarrow-hotfix in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from datasets->adakv==0.0.1) (0.7)
+Requirement already satisfied: dill<0.3.9,>=0.3.0 in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from datasets->adakv==0.0.1) (0.3.8)
+Requirement already satisfied: pandas in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from datasets->adakv==0.0.1) (3.0.5)
+Requirement already satisfied: xxhash in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from datasets->adakv==0.0.1) (4.0.1)
+Requirement already satisfied: multiprocess in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from datasets->adakv==0.0.1) (0.70.16)
+Requirement already satisfied: aiohttp in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from datasets->adakv==0.0.1) (3.14.3)
+Requirement already satisfied: aiohappyeyeballs>=2.5.0 in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from aiohttp->datasets->adakv==0.0.1) (2.7.1)
+Requirement already satisfied: aiosignal>=1.4.0 in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from aiohttp->datasets->adakv==0.0.1) (1.4.0)
+Requirement already satisfied: attrs>=17.3.0 in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from aiohttp->datasets->adakv==0.0.1) (26.1.0)
+Requirement already satisfied: frozenlist>=1.1.1 in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from aiohttp->datasets->adakv==0.0.1) (1.8.0)
+Requirement already satisfied: multidict<7.0,>=4.5 in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from aiohttp->datasets->adakv==0.0.1) (6.7.1)
+Requirement already satisfied: propcache>=0.2.0 in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from aiohttp->datasets->adakv==0.0.1) (0.5.2)
+Requirement already satisfied: yarl<2.0,>=1.17.0 in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from aiohttp->datasets->adakv==0.0.1) (1.24.5)
+Requirement already satisfied: idna>=2.0 in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from yarl<2.0,>=1.17.0->aiohttp->datasets->adakv==0.0.1) (3.19)
+Requirement already satisfied: charset_normalizer<4,>=2 in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from requests->icetk==0.0.7->adakv==0.0.1) (3.5.1)
+Requirement already satisfied: urllib3<3,>=1.26 in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from requests->icetk==0.0.7->adakv==0.0.1) (2.7.0)
+Requirement already satisfied: certifi>=2023.5.7 in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from requests->icetk==0.0.7->adakv==0.0.1) (2026.7.22)
+Requirement already satisfied: MarkupSafe>=2.0 in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from jinja2->torch>=2.0.0->accelerate->adakv==0.0.1) (3.0.3)
+Requirement already satisfied: python-dateutil>=2.8.2 in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from pandas->datasets->adakv==0.0.1) (2.9.0.post0)
+Requirement already satisfied: six>=1.5 in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from python-dateutil>=2.8.2->pandas->datasets->adakv==0.0.1) (1.17.0)
+Requirement already satisfied: absl-py in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from rouge_score->adakv==0.0.1) (2.5.0)
+Requirement already satisfied: nltk in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from rouge_score->adakv==0.0.1) (3.10.3)
+Requirement already satisfied: defusedxml in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from nltk->rouge_score->adakv==0.0.1) (0.7.1)
+Requirement already satisfied: click in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from nltk->rouge_score->adakv==0.0.1) (8.4.2)
+Requirement already satisfied: joblib in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from nltk->rouge_score->adakv==0.0.1) (1.5.3)
+Requirement already satisfied: pillow!=8.3.*,>=5.3.0 in /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages (from torchvision->icetk==0.0.7->adakv==0.0.1) (12.3.0)
+Downloading icetk-0.0.7-py3-none-any.whl (16 kB)
+Downloading tqdm-4.66.1-py3-none-any.whl (78 kB)
+Downloading protobuf-3.18.3-py2.py3-none-any.whl (174 kB)
+Using cached rouge-1.0.1-py3-none-any.whl (13 kB)
+Building wheels for collected packages: adakv
+  Building editable for adakv (pyproject.toml): started
+  Building editable for adakv (pyproject.toml): finished with status 'done'
+  Created wheel for adakv: filename=adakv-0.0.1-0.editable-py3-none-any.whl size=3950 sha256=9e03e4e76f097bb997201b6981bdbb947bfbc5f6c566f9485c52f7bf6c2a3431
+  Stored in directory: /tmpdata/pip-ephem-wheel-cache-x129z58x/wheels/fd/63/c2/bff5a879992a1869d4f595f04fc125972dee48a5786fc5f8bc
+Successfully built adakv
+Installing collected packages: tqdm, rouge, protobuf, icetk, adakv
+  Attempting uninstall: tqdm
+    Found existing installation: tqdm 4.70.0
+    Uninstalling tqdm-4.70.0:
+      Successfully uninstalled tqdm-4.70.0
+
+Successfully installed adakv-0.0.1 icetk-0.0.7 protobuf-3.18.3 rouge-1.0.1 tqdm-4.66.1
+
+============================================================
+Testing AdaKV imports
+============================================================
+Torch: 2.8.0+cu128
+Torch CUDA: 12.8
+Transformers: 4.44.2

@@ -1,0 +1,18 @@
+NVIDIA A100-PCIE-40GB, 40960 MiB, 580.105.08
+Working on max_capacity_prompts 512 dataset qasper - 0/1
+Loading data...
+Max Length is 14660
+Finish loading model and tokenizer
+Using PyramidKV!
+Using PyramidKV!
+Working on max_capacity_prompts 512 dataset qasper - 0/1
+Loading data...
+Max Length is 14660
+Finish loading model and tokenizer
+Using AdaKV!
+Using AdaKV!
+Working on max_capacity_prompts 512 dataset qasper - 0/1
+Loading data...
+Max Length is 14660
+Finish loading model and tokenizer
+KVCF GPU SMOKE: PASS

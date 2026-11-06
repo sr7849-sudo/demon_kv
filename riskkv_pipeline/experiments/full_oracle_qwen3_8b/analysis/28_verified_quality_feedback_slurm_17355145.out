@@ -1,0 +1,139 @@
+
+CondaError: Run 'conda init' before 'conda activate'
+
+/home/sr7849/.conda/envs/riskkv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1403: FutureWarning: 'penalty' was deprecated in version 1.8 and will be removed in 1.10. To avoid this warning, leave 'penalty' set to its default value and use 'l1_ratio' or 'C' instead. Use l1_ratio=0 instead of penalty='l2', l1_ratio=1 instead of penalty='l1', l1_ratio set to a float between 0 and 1 instead of penalty='elasticnet', and C=np.inf instead of penalty=None.
+  warnings.warn(
+/home/sr7849/.conda/envs/riskkv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1403: FutureWarning: 'penalty' was deprecated in version 1.8 and will be removed in 1.10. To avoid this warning, leave 'penalty' set to its default value and use 'l1_ratio' or 'C' instead. Use l1_ratio=0 instead of penalty='l2', l1_ratio=1 instead of penalty='l1', l1_ratio set to a float between 0 and 1 instead of penalty='elasticnet', and C=np.inf instead of penalty=None.
+  warnings.warn(
+/home/sr7849/.conda/envs/riskkv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1403: FutureWarning: 'penalty' was deprecated in version 1.8 and will be removed in 1.10. To avoid this warning, leave 'penalty' set to its default value and use 'l1_ratio' or 'C' instead. Use l1_ratio=0 instead of penalty='l2', l1_ratio=1 instead of penalty='l1', l1_ratio set to a float between 0 and 1 instead of penalty='elasticnet', and C=np.inf instead of penalty=None.
+  warnings.warn(
+/home/sr7849/.conda/envs/riskkv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1403: FutureWarning: 'penalty' was deprecated in version 1.8 and will be removed in 1.10. To avoid this warning, leave 'penalty' set to its default value and use 'l1_ratio' or 'C' instead. Use l1_ratio=0 instead of penalty='l2', l1_ratio=1 instead of penalty='l1', l1_ratio set to a float between 0 and 1 instead of penalty='elasticnet', and C=np.inf instead of penalty=None.
+  warnings.warn(
+/home/sr7849/.conda/envs/riskkv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1403: FutureWarning: 'penalty' was deprecated in version 1.8 and will be removed in 1.10. To avoid this warning, leave 'penalty' set to its default value and use 'l1_ratio' or 'C' instead. Use l1_ratio=0 instead of penalty='l2', l1_ratio=1 instead of penalty='l1', l1_ratio set to a float between 0 and 1 instead of penalty='elasticnet', and C=np.inf instead of penalty=None.
+  warnings.warn(
+/home/sr7849/.conda/envs/riskkv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1403: FutureWarning: 'penalty' was deprecated in version 1.8 and will be removed in 1.10. To avoid this warning, leave 'penalty' set to its default value and use 'l1_ratio' or 'C' instead. Use l1_ratio=0 instead of penalty='l2', l1_ratio=1 instead of penalty='l1', l1_ratio set to a float between 0 and 1 instead of penalty='elasticnet', and C=np.inf instead of penalty=None.
+  warnings.warn(
+/home/sr7849/.conda/envs/riskkv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1403: FutureWarning: 'penalty' was deprecated in version 1.8 and will be removed in 1.10. To avoid this warning, leave 'penalty' set to its default value and use 'l1_ratio' or 'C' instead. Use l1_ratio=0 instead of penalty='l2', l1_ratio=1 instead of penalty='l1', l1_ratio set to a float between 0 and 1 instead of penalty='elasticnet', and C=np.inf instead of penalty=None.
+  warnings.warn(
+/home/sr7849/.conda/envs/riskkv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1403: FutureWarning: 'penalty' was deprecated in version 1.8 and will be removed in 1.10. To avoid this warning, leave 'penalty' set to its default value and use 'l1_ratio' or 'C' instead. Use l1_ratio=0 instead of penalty='l2', l1_ratio=1 instead of penalty='l1', l1_ratio set to a float between 0 and 1 instead of penalty='elasticnet', and C=np.inf instead of penalty=None.
+  warnings.warn(
+/home/sr7849/.conda/envs/riskkv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1403: FutureWarning: 'penalty' was deprecated in version 1.8 and will be removed in 1.10. To avoid this warning, leave 'penalty' set to its default value and use 'l1_ratio' or 'C' instead. Use l1_ratio=0 instead of penalty='l2', l1_ratio=1 instead of penalty='l1', l1_ratio set to a float between 0 and 1 instead of penalty='elasticnet', and C=np.inf instead of penalty=None.
+  warnings.warn(
+/home/sr7849/.conda/envs/riskkv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1403: FutureWarning: 'penalty' was deprecated in version 1.8 and will be removed in 1.10. To avoid this warning, leave 'penalty' set to its default value and use 'l1_ratio' or 'C' instead. Use l1_ratio=0 instead of penalty='l2', l1_ratio=1 instead of penalty='l1', l1_ratio set to a float between 0 and 1 instead of penalty='elasticnet', and C=np.inf instead of penalty=None.
+  warnings.warn(
+/home/sr7849/.conda/envs/riskkv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1403: FutureWarning: 'penalty' was deprecated in version 1.8 and will be removed in 1.10. To avoid this warning, leave 'penalty' set to its default value and use 'l1_ratio' or 'C' instead. Use l1_ratio=0 instead of penalty='l2', l1_ratio=1 instead of penalty='l1', l1_ratio set to a float between 0 and 1 instead of penalty='elasticnet', and C=np.inf instead of penalty=None.
+  warnings.warn(
+/home/sr7849/.conda/envs/riskkv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1403: FutureWarning: 'penalty' was deprecated in version 1.8 and will be removed in 1.10. To avoid this warning, leave 'penalty' set to its default value and use 'l1_ratio' or 'C' instead. Use l1_ratio=0 instead of penalty='l2', l1_ratio=1 instead of penalty='l1', l1_ratio set to a float between 0 and 1 instead of penalty='elasticnet', and C=np.inf instead of penalty=None.
+  warnings.warn(
+/home/sr7849/.conda/envs/riskkv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1403: FutureWarning: 'penalty' was deprecated in version 1.8 and will be removed in 1.10. To avoid this warning, leave 'penalty' set to its default value and use 'l1_ratio' or 'C' instead. Use l1_ratio=0 instead of penalty='l2', l1_ratio=1 instead of penalty='l1', l1_ratio set to a float between 0 and 1 instead of penalty='elasticnet', and C=np.inf instead of penalty=None.
+  warnings.warn(
+/home/sr7849/.conda/envs/riskkv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1403: FutureWarning: 'penalty' was deprecated in version 1.8 and will be removed in 1.10. To avoid this warning, leave 'penalty' set to its default value and use 'l1_ratio' or 'C' instead. Use l1_ratio=0 instead of penalty='l2', l1_ratio=1 instead of penalty='l1', l1_ratio set to a float between 0 and 1 instead of penalty='elasticnet', and C=np.inf instead of penalty=None.
+  warnings.warn(
+/home/sr7849/.conda/envs/riskkv/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1403: FutureWarning: 'penalty' was deprecated in version 1.8 and will be removed in 1.10. To avoid this warning, leave 'penalty' set to its default value and use 'l1_ratio' or 'C' instead. Use l1_ratio=0 instead of penalty='l2', l1_ratio=1 instead of penalty='l1', l1_ratio set to a float between 0 and 1 instead of penalty='elasticnet', and C=np.inf instead of penalty=None.
+  warnings.warn(
+
+================================================================================
+HELD-OUT TASK: hotpotqa
+================================================================================
+
+================================================================================
+HELD-OUT TASK: multifieldqa_en
+================================================================================
+
+================================================================================
+HELD-OUT TASK: passage_retrieval_en
+================================================================================
+
+================================================================================
+HELD-OUT TASK: qasper
+================================================================================
+
+================================================================================
+HELD-OUT TASK: triviaqa
+================================================================================
+
+====================================================================================================
+VERIFIED QUALITY FEEDBACK - OVERALL
+====================================================================================================
+ delta            method audit_strategy  audit_rate_target  mean_violation_rate  mean_absolute_target_error  mean_memory_saved  mean_fullkv_rate  mean_audit_rate_all_requests  mean_audit_rate_compressed  mean_actual_violation_budget_excess
+  0.01 calibrated_budget         random               0.01              0.08746                     0.08284            0.63592           0.03109                       0.01056                     0.01090                                36.09
+  0.01 calibrated_budget         random               0.05              0.08384                     0.07922            0.65037           0.03089                       0.05011                     0.05171                                33.92
+  0.01 calibrated_budget         random               0.10              0.07721                     0.07266            0.62721           0.04659                       0.09832                     0.10299                                29.96
+  0.01 calibrated_budget    uncertainty               0.01              0.08544                     0.08082            0.62529           0.03151                       0.00797                     0.00819                                34.88
+  0.01 calibrated_budget    uncertainty               0.05              0.08608                     0.08146            0.65548           0.02842                       0.04068                     0.04175                                35.26
+  0.01 calibrated_budget    uncertainty               0.10              0.07987                     0.07533            0.63720           0.03571                       0.07625                     0.07878                                31.56
+  0.01             fixed           none               0.00              0.08339                     0.08661            0.46931           0.11647                       0.00000                     0.00000                                36.00
+  0.01       global_ewma         random               0.01              0.04792                     0.05964            0.45918           0.23577                       0.00832                     0.01488                                17.27
+  0.01       global_ewma         random               0.05              0.05676                     0.07154            0.49907           0.21456                       0.04080                     0.05731                                23.49
+  0.01       global_ewma         random               0.10              0.05730                     0.07500            0.45326           0.20128                       0.08253                     0.10909                                24.69
+  0.01       global_ewma    uncertainty               0.01              0.05604                     0.06466            0.47231           0.20830                       0.00612                     0.01060                                21.21
+  0.01       global_ewma    uncertainty               0.05              0.06112                     0.07138            0.49972           0.19648                       0.03075                     0.04074                                24.75
+  0.01       global_ewma    uncertainty               0.10              0.06023                     0.07607            0.48604           0.21125                       0.05614                     0.07504                                25.89
+  0.01 online_calibrator         random               0.01              0.09908                     0.09446            0.63784           0.01281                       0.01087                     0.01101                                43.06
+  0.01 online_calibrator         random               0.05              0.09468                     0.09072            0.65604           0.00745                       0.05125                     0.05163                                40.62
+  0.01 online_calibrator         random               0.10              0.08800                     0.08577            0.63571           0.01079                       0.10156                     0.10267                                37.13
+  0.01 online_calibrator    uncertainty               0.01              0.09804                     0.09342            0.62923           0.01176                       0.00790                     0.00800                                42.44
+  0.01 online_calibrator    uncertainty               0.05              0.09642                     0.09262            0.65992           0.00734                       0.04030                     0.04059                                41.71
+  0.01 online_calibrator    uncertainty               0.10              0.09150                     0.08950            0.64001           0.01110                       0.07448                     0.07533                                39.30
+  0.05 calibrated_budget         random               0.01              0.07129                     0.07451            0.67952           0.01611                       0.01086                     0.01104                                28.74
+  0.05 calibrated_budget         random               0.05              0.07034                     0.07356            0.68131           0.01974                       0.05066                     0.05168                                28.17
+  0.05 calibrated_budget         random               0.10              0.06394                     0.06729            0.66749           0.03162                       0.09959                     0.10288                                24.37
+  0.05 calibrated_budget    uncertainty               0.01              0.07322                     0.07644            0.67999           0.01674                       0.00731                     0.00744                                29.90
+  0.05 calibrated_budget    uncertainty               0.05              0.07291                     0.07613            0.68652           0.01926                       0.03710                     0.03782                                29.71
+  0.05 calibrated_budget    uncertainty               0.10              0.06809                     0.07134            0.67693           0.02183                       0.06773                     0.06925                                26.83
+  0.05             fixed           none               0.00              0.07672                     0.07994            0.53500           0.15863                       0.00000                     0.00000                                32.00
+  0.05       global_ewma         random               0.01              0.05959                     0.06808            0.59577           0.14643                       0.00915                     0.01225                                23.30
+  0.05       global_ewma         random               0.05              0.05125                     0.06385            0.56834           0.16962                       0.04316                     0.05594                                19.53
+  0.05       global_ewma         random               0.10              0.04419                     0.06151            0.60199           0.17918                       0.08444                     0.10900                                16.71
+  0.05       global_ewma    uncertainty               0.01              0.06279                     0.06974            0.59597           0.14068                       0.00660                     0.00913                                24.76
+  0.05       global_ewma    uncertainty               0.05              0.05330                     0.06463            0.60787           0.15015                       0.03201                     0.04052                                20.38
+  0.05       global_ewma    uncertainty               0.10              0.04758                     0.06326            0.58137           0.20221                       0.05599                     0.07481                                18.25
+  0.05 online_calibrator         random               0.01              0.08376                     0.08698            0.72295           0.00527                       0.01098                     0.01104                                36.22
+  0.05 online_calibrator         random               0.05              0.07907                     0.08229            0.72301           0.00987                       0.05106                     0.05159                                33.41
+  0.05 online_calibrator         random               0.10              0.07487                     0.07809            0.71360           0.01308                       0.10121                     0.10254                                30.89
+  0.05 online_calibrator    uncertainty               0.01              0.08254                     0.08576            0.71745           0.00593                       0.00766                     0.00770                                35.49
+  0.05 online_calibrator    uncertainty               0.05              0.08076                     0.08398            0.72557           0.00775                       0.03861                     0.03892                                34.42
+  0.05 online_calibrator    uncertainty               0.10              0.07722                     0.08044            0.71958           0.00947                       0.07144                     0.07215                                32.30
+  0.10 calibrated_budget         random               0.01              0.05129                     0.05454            0.66462           0.01895                       0.01080                     0.01096                                16.75
+  0.10 calibrated_budget         random               0.05              0.05095                     0.05448            0.67636           0.01823                       0.05087                     0.05180                                16.63
+  0.10 calibrated_budget         random               0.10              0.05004                     0.05366            0.66763           0.02416                       0.10033                     0.10288                                16.11
+  0.10 calibrated_budget    uncertainty               0.01              0.05091                     0.05416            0.65657           0.02126                       0.00709                     0.00722                                16.52
+  0.10 calibrated_budget    uncertainty               0.05              0.05127                     0.05449            0.67799           0.01411                       0.03637                     0.03688                                16.73
+  0.10 calibrated_budget    uncertainty               0.10              0.05074                     0.05413            0.67730           0.01661                       0.06800                     0.06915                                16.46
+  0.10             fixed           none               0.00              0.05339                     0.05661            0.66389           0.00000                       0.00000                     0.00000                                18.00
+  0.10       global_ewma         random               0.01              0.04451                     0.05033            0.67064           0.07357                       0.01010                     0.01155                                13.45
+  0.10       global_ewma         random               0.05              0.03459                     0.04664            0.63736           0.13023                       0.04494                     0.05420                                 9.37
+  0.10       global_ewma         random               0.10              0.02706                     0.04431            0.60742           0.17578                       0.08486                     0.10833                                 6.41
+  0.10       global_ewma    uncertainty               0.01              0.04347                     0.05123            0.65617           0.08603                       0.00678                     0.00892                                13.41
+  0.10       global_ewma    uncertainty               0.05              0.03609                     0.04631            0.63618           0.13510                       0.03246                     0.03998                                 9.72
+  0.10       global_ewma    uncertainty               0.10              0.03197                     0.04496            0.62742           0.14637                       0.06005                     0.07234                                 8.08
+  0.10 online_calibrator         random               0.01              0.06006                     0.06328            0.70299           0.00124                       0.01098                     0.01099                                22.00
+  0.10 online_calibrator         random               0.05              0.06006                     0.06328            0.71980           0.00008                       0.05157                     0.05158                                22.00
+  0.10 online_calibrator         random               0.10              0.06006                     0.06328            0.71851           0.00047                       0.10244                     0.10249                                22.00
+  0.10 online_calibrator    uncertainty               0.01              0.06006                     0.06328            0.68936           0.00485                       0.00753                     0.00755                                22.00
+  0.10 online_calibrator    uncertainty               0.05              0.06006                     0.06328            0.71726           0.00044                       0.03776                     0.03777                                22.00
+  0.10 online_calibrator    uncertainty               0.10              0.06006                     0.06328            0.72000           0.00007                       0.07121                     0.07122                                22.00
+
+====================================================================================================
+INITIAL CALIBRATION DIAGNOSTICS
+====================================================================================================
+ delta         heldout_task  base_brier  calibrated_brier  base_ece  calibrated_ece  base_threshold  calibrated_threshold
+  0.01             hotpotqa     0.12879           0.12408   0.08864         0.07485         0.97094               0.94033
+  0.05             hotpotqa     0.12202           0.11947   0.07482         0.07761         0.93951               0.92063
+  0.10             hotpotqa     0.12309           0.11571   0.08062         0.06441         0.94051               0.91626
+  0.01      multifieldqa_en     0.24495           0.22392   0.20282         0.15796         0.80532               0.48998
+  0.05      multifieldqa_en     0.21197           0.19219   0.16801         0.11600         0.81787               0.50295
+  0.10      multifieldqa_en     0.17756           0.16733   0.13693         0.11873         0.79443               0.59366
+  0.01 passage_retrieval_en     0.16409           0.10082   0.25328         0.09003         0.98120               0.97092
+  0.05 passage_retrieval_en     0.13993           0.08890   0.19459         0.06044         0.98840               0.95031
+  0.10 passage_retrieval_en     0.11314           0.09425   0.15524         0.09159         0.94569               0.96476
+  0.01               qasper     0.20647           0.19088   0.17134         0.14122         0.95642               0.85112
+  0.05               qasper     0.20052           0.18178   0.16395         0.13183         0.95009               0.84118
+  0.10               qasper     0.17860           0.16662   0.14128         0.11362         0.96726               0.80212
+  0.01             triviaqa     0.12414           0.11645   0.08876         0.05371         0.98911               0.87216
+  0.05             triviaqa     0.12752           0.11759   0.09677         0.07028         0.99432               0.94318
+  0.10             triviaqa     0.13961           0.13193   0.12002         0.09058         0.99121               0.92133
+
+Outputs: experiments/full_oracle_qwen3_8b/analysis/28_verified_quality_feedback
+
+EXPERIMENT 9A: PASS

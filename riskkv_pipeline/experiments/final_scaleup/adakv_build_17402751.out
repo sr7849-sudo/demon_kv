@@ -1,0 +1,23 @@
+============================================================
+AdaKV build environment
+============================================================
+HOST:
+cn183
+
+PYTHON:
+/scratch/sr7849/conda_envs/riskkv-adakv/bin/python
+Python 3.11.15
+
+PIP:
+/scratch/sr7849/conda_envs/riskkv-adakv/bin/pip
+pip 26.1.2 from /scratch/sr7849/conda_envs/riskkv-adakv/lib/python3.11/site-packages/pip (python 3.11)
+
+NVCC:
+/scratch/sr7849/conda_envs/riskkv-adakv/bin/nvcc
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2025 NVIDIA Corporation
+Built on Fri_Feb_21_20:23:50_PST_2025
+Cuda compilation tools, release 12.8, V12.8.93
+Build cuda_12.8.r12.8/compiler.35583870_0
+
+GCC:

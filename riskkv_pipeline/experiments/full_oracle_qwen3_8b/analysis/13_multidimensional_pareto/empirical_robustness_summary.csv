@@ -1,0 +1,7 @@
+space,estimate,requests_total,requests_changed_vs_median,fraction_changed_vs_median
+S4_D_M_T_E,p80,25,5,0.2
+S5_D_M_T_E_P,p80,25,4,0.16
+S4_D_M_T_E,p90,25,6,0.24
+S5_D_M_T_E_P,p90,25,8,0.32
+S4_D_M_T_E,max,25,8,0.32
+S5_D_M_T_E_P,max,25,11,0.44

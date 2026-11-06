@@ -1,0 +1,39 @@
+# Datasets and checkpoints
+**/data/
+**/datasets/
+**/checkpoints/
+*.safetensors
+*.pt
+*.pth
+*.ckpt
+*.bin
+*.npz
+*.npy
+
+# Experiment outputs
+**/results/
+**/logs/
+**/outputs/
+*.log
+slurm-*.out
+
+# Python environments and caches
+**/.venv/
+**/venv/
+**/__pycache__/
+**/.pytest_cache/
+*.pyc
+*.egg-info/
+.env
+.env.*
+
+# Build artifacts
+**/build/
+**/dist/
+*.so
+*.o
+
+# Secrets
+*.pem
+*.key
+**/credentials.json

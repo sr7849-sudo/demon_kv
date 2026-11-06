@@ -1,0 +1,16 @@
+task,space,requests,mean_pareto_points,median_pareto_points,distinct_frontiers
+hotpotqa,nominal_2d,59,2.389830508474576,2.0,4
+hotpotqa,measured_2d,59,1.423728813559322,1.0,4
+hotpotqa,measured_3d,59,3.3220338983050848,3.0,28
+multifieldqa_en,nominal_2d,60,1.9166666666666667,2.0,12
+multifieldqa_en,measured_2d,60,1.7,2.0,12
+multifieldqa_en,measured_3d,60,3.566666666666667,4.0,35
+passage_retrieval_en,nominal_2d,51,2.4705882352941178,3.0,4
+passage_retrieval_en,measured_2d,51,1.3725490196078431,1.0,3
+passage_retrieval_en,measured_3d,51,3.6862745098039214,4.0,33
+qasper,nominal_2d,60,2.1333333333333333,2.0,10
+qasper,measured_2d,60,1.6166666666666667,1.0,11
+qasper,measured_3d,60,3.783333333333333,4.0,35
+triviaqa,nominal_2d,60,1.9833333333333334,2.0,3
+triviaqa,measured_2d,60,1.2833333333333334,1.0,3
+triviaqa,measured_3d,60,3.8833333333333333,4.0,24

@@ -1,0 +1,47 @@
+{
+  "full_tasks": [
+    "qasper",
+    "multifieldqa_en",
+    "hotpotqa",
+    "triviaqa",
+    "gov_report",
+    "multi_news",
+    "trec",
+    "passage_retrieval_en",
+    "passage_count"
+  ],
+  "partial_tasks_qwen3_4b": [
+    "qasper",
+    "hotpotqa",
+    "gov_report"
+  ],
+  "baseline_model": "mistralai/Mistral-7B-Instruct-v0.2",
+  "native_full_model": "Qwen/Qwen3-8B",
+  "native_partial_model": "Qwen/Qwen3-4B",
+  "kvcf_methods": [
+    "FullKV",
+    "snapkv",
+    "pyramidkv",
+    "adakv",
+    "l2norm"
+  ],
+  "retained_token_budgets": [
+    256,
+    512,
+    1024,
+    2048,
+    4096
+  ],
+  "quality_deltas": [
+    0.01,
+    0.05,
+    0.1
+  ],
+  "risk_targets": [
+    0.01,
+    0.05
+  ],
+  "bootstrap_resamples": 2000,
+  "grouped_cv_repeats": 5,
+  "grouped_cv_folds": 5
+}

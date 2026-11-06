@@ -1,0 +1,126 @@
+============================================================
+BUILD ENVIRONMENT
+============================================================
+cn006
+NVIDIA A100-PCIE-40GB, 40960 MiB, 580.105.08
+
+Python:
+/scratch/sr7849/conda_envs/riskkv-kvcf/bin/python
+Python 3.11.15
+
+NVCC:
+/scratch/sr7849/conda_envs/riskkv-adakv/bin/nvcc
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2025 NVIDIA Corporation
+Built on Fri_Feb_21_20:23:50_PST_2025
+Cuda compilation tools, release 12.8, V12.8.93
+Build cuda_12.8.r12.8/compiler.35583870_0
+
+Compiler:
+x86_64-conda-linux-gnu-gcc (conda-forge gcc 12.4.0-2) 12.4.0
+
+Host GLIBC:
+ldd (GNU libc) 2.28
+
+Torch:
+2.8.0+cu128
+12.8
+CUDA: True
+
+============================================================
+REMOVE ANY INCOMPATIBLE FLASH-ATTN
+============================================================
+
+============================================================
+GET SOURCE DISTRIBUTION
+============================================================
+Collecting flash-attn==2.8.3
+  Using cached flash_attn-2.8.3.tar.gz (8.4 MB)
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Saved ./flash_attn-2.8.3.tar.gz
+Successfully downloaded flash-attn
+total 512
+-rw-r--r-- 1 sr7849 users 8.1M Sep  1 03:35 flash_attn-2.8.3.tar.gz
+
+Source directory:
+/scratch/sr7849/tmp/kvcf_flash_17517201/source/flash_attn-2.8.3
+
+============================================================
+BUILD LOCAL SOURCE
+============================================================
+Processing ./.
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: torch in /scratch/sr7849/conda_envs/riskkv-kvcf/lib/python3.11/site-packages (from flash_attn==2.8.3) (2.8.0+cu128)
+Requirement already satisfied: einops in /scratch/sr7849/conda_envs/riskkv-kvcf/lib/python3.11/site-packages (from flash_attn==2.8.3) (0.8.2)
+Requirement already satisfied: filelock in /scratch/sr7849/conda_envs/riskkv-kvcf/lib/python3.11/site-packages (from torch->flash_attn==2.8.3) (3.32.3)
+Requirement already satisfied: typing-extensions>=4.10.0 in /scratch/sr7849/conda_envs/riskkv-kvcf/lib/python3.11/site-packages (from torch->flash_attn==2.8.3) (4.16.0)
+Requirement already satisfied: sympy>=1.13.3 in /scratch/sr7849/conda_envs/riskkv-kvcf/lib/python3.11/site-packages (from torch->flash_attn==2.8.3) (1.14.0)
+Requirement already satisfied: networkx in /scratch/sr7849/conda_envs/riskkv-kvcf/lib/python3.11/site-packages (from torch->flash_attn==2.8.3) (3.6.1)
+Requirement already satisfied: jinja2 in /scratch/sr7849/conda_envs/riskkv-kvcf/lib/python3.11/site-packages (from torch->flash_attn==2.8.3) (3.1.6)
+Requirement already satisfied: fsspec in /scratch/sr7849/conda_envs/riskkv-kvcf/lib/python3.11/site-packages (from torch->flash_attn==2.8.3) (2026.6.0)
+Requirement already satisfied: nvidia-cuda-nvrtc-cu12==12.8.93 in /scratch/sr7849/conda_envs/riskkv-kvcf/lib/python3.11/site-packages (from torch->flash_attn==2.8.3) (12.8.93)
+Requirement already satisfied: nvidia-cuda-runtime-cu12==12.8.90 in /scratch/sr7849/conda_envs/riskkv-kvcf/lib/python3.11/site-packages (from torch->flash_attn==2.8.3) (12.8.90)
+Requirement already satisfied: nvidia-cuda-cupti-cu12==12.8.90 in /scratch/sr7849/conda_envs/riskkv-kvcf/lib/python3.11/site-packages (from torch->flash_attn==2.8.3) (12.8.90)
+Requirement already satisfied: nvidia-cudnn-cu12==9.10.2.21 in /scratch/sr7849/conda_envs/riskkv-kvcf/lib/python3.11/site-packages (from torch->flash_attn==2.8.3) (9.10.2.21)
+Requirement already satisfied: nvidia-cublas-cu12==12.8.4.1 in /scratch/sr7849/conda_envs/riskkv-kvcf/lib/python3.11/site-packages (from torch->flash_attn==2.8.3) (12.8.4.1)
+Requirement already satisfied: nvidia-cufft-cu12==11.3.3.83 in /scratch/sr7849/conda_envs/riskkv-kvcf/lib/python3.11/site-packages (from torch->flash_attn==2.8.3) (11.3.3.83)
+Requirement already satisfied: nvidia-curand-cu12==10.3.9.90 in /scratch/sr7849/conda_envs/riskkv-kvcf/lib/python3.11/site-packages (from torch->flash_attn==2.8.3) (10.3.9.90)
+Requirement already satisfied: nvidia-cusolver-cu12==11.7.3.90 in /scratch/sr7849/conda_envs/riskkv-kvcf/lib/python3.11/site-packages (from torch->flash_attn==2.8.3) (11.7.3.90)
+Requirement already satisfied: nvidia-cusparse-cu12==12.5.8.93 in /scratch/sr7849/conda_envs/riskkv-kvcf/lib/python3.11/site-packages (from torch->flash_attn==2.8.3) (12.5.8.93)
+Requirement already satisfied: nvidia-cusparselt-cu12==0.7.1 in /scratch/sr7849/conda_envs/riskkv-kvcf/lib/python3.11/site-packages (from torch->flash_attn==2.8.3) (0.7.1)
+Requirement already satisfied: nvidia-nccl-cu12==2.27.3 in /scratch/sr7849/conda_envs/riskkv-kvcf/lib/python3.11/site-packages (from torch->flash_attn==2.8.3) (2.27.3)
+Requirement already satisfied: nvidia-nvtx-cu12==12.8.90 in /scratch/sr7849/conda_envs/riskkv-kvcf/lib/python3.11/site-packages (from torch->flash_attn==2.8.3) (12.8.90)
+Requirement already satisfied: nvidia-nvjitlink-cu12==12.8.93 in /scratch/sr7849/conda_envs/riskkv-kvcf/lib/python3.11/site-packages (from torch->flash_attn==2.8.3) (12.8.93)
+Requirement already satisfied: nvidia-cufile-cu12==1.13.1.3 in /scratch/sr7849/conda_envs/riskkv-kvcf/lib/python3.11/site-packages (from torch->flash_attn==2.8.3) (1.13.1.3)
+Requirement already satisfied: triton==3.4.0 in /scratch/sr7849/conda_envs/riskkv-kvcf/lib/python3.11/site-packages (from torch->flash_attn==2.8.3) (3.4.0)
+Requirement already satisfied: setuptools>=40.8.0 in /scratch/sr7849/conda_envs/riskkv-kvcf/lib/python3.11/site-packages (from triton==3.4.0->torch->flash_attn==2.8.3) (83.0.0)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in /scratch/sr7849/conda_envs/riskkv-kvcf/lib/python3.11/site-packages (from sympy>=1.13.3->torch->flash_attn==2.8.3) (1.3.0)
+Requirement already satisfied: MarkupSafe>=2.0 in /scratch/sr7849/conda_envs/riskkv-kvcf/lib/python3.11/site-packages (from jinja2->torch->flash_attn==2.8.3) (3.0.3)
+Building wheels for collected packages: flash_attn
+  Building wheel for flash_attn (pyproject.toml): started
+  Building wheel for flash_attn (pyproject.toml): still running...
+  Building wheel for flash_attn (pyproject.toml): still running...
+  Building wheel for flash_attn (pyproject.toml): still running...
+  Building wheel for flash_attn (pyproject.toml): still running...
+  Building wheel for flash_attn (pyproject.toml): still running...
+  Building wheel for flash_attn (pyproject.toml): still running...
+  Building wheel for flash_attn (pyproject.toml): still running...
+  Building wheel for flash_attn (pyproject.toml): still running...
+  Building wheel for flash_attn (pyproject.toml): still running...
+  Building wheel for flash_attn (pyproject.toml): still running...
+  Building wheel for flash_attn (pyproject.toml): still running...
+  Building wheel for flash_attn (pyproject.toml): still running...
+  Building wheel for flash_attn (pyproject.toml): still running...
+  Building wheel for flash_attn (pyproject.toml): still running...
+  Building wheel for flash_attn (pyproject.toml): still running...
+  Building wheel for flash_attn (pyproject.toml): still running...
+  Building wheel for flash_attn (pyproject.toml): still running...
+  Building wheel for flash_attn (pyproject.toml): still running...
+  Building wheel for flash_attn (pyproject.toml): still running...
+  Building wheel for flash_attn (pyproject.toml): still running...
+  Building wheel for flash_attn (pyproject.toml): still running...
+  Building wheel for flash_attn (pyproject.toml): still running...
+  Building wheel for flash_attn (pyproject.toml): still running...
+  Building wheel for flash_attn (pyproject.toml): still running...
+  Building wheel for flash_attn (pyproject.toml): still running...
+  Building wheel for flash_attn (pyproject.toml): still running...
+  Building wheel for flash_attn (pyproject.toml): finished with status 'done'
+  Created wheel for flash_attn: filename=flash_attn-2.8.3-cp311-cp311-linux_x86_64.whl size=57007211 sha256=d9d25af05211071afd35e1ce0c68903c5649e052e0f57af24bf3c0af99a0c815
+  Stored in directory: /scratch/sr7849/tmp/kvcf_flash_17517201/pip-ephem-wheel-cache-8vn7vknl/wheels/4c/78/92/756ced953a998bb16652551d6faffcb3dfbedc971e84e89ae3
+Successfully built flash_attn
+Installing collected packages: flash_attn
+Successfully installed flash_attn-2.8.3
+
+============================================================
+VERIFY IMPORT + GPU KERNEL
+============================================================
+Torch: 2.8.0+cu128
+Torch CUDA: 12.8
+FlashAttention: 2.8.3
+CUDA available: True
+GPU: NVIDIA A100-PCIE-40GB
+Output: torch.Size([1, 128, 8, 64])
+Finite: True
+KVCF FLASHATTENTION SOURCE BUILD: PASS

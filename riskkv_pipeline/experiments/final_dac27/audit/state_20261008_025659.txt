@@ -1,0 +1,43 @@
+=== RISKKV DAC27 FREEZE ===
+2026-10-08T02:56:59+04:00
+login3.fast
+
+=== MAIN REPO ===
+
+=== KVCache-Factory ===
+68cd9551a63fedf362ddb0edb008badd04c24996
+
+=== AdaKV ===
+04497abac4c1a58426f3daf1014578990e225cc5
+
+=== DynamicKV ===
+8ab3c08d4f0a93ef3322e267e1faa03c4e12fd24
+ M kv_compression/token_drop/monkeypatch.py
+?? kv_compression/token_drop/__pycache__/
+?? kv_compression/token_drop/internlm_model_impl/__pycache__/
+?? kv_compression/token_drop/llama_model_impl/__pycache__/
+?? kv_compression/token_drop/methods/__pycache__/
+?? kv_compression/token_drop/mistral_model_impl/__pycache__/
+?? kv_compression/token_drop/monkeypatch.py.orig
+?? kv_compression/token_drop/qwen2_model_impl/__pycache__/
+
+=== LongBench ===
+2e00731f8d0bff23dc4325161044d0ed8af94c1e
+
+=== KVCF ENV ===
+python: 3.11.15 (main, Jun 11 2026, 15:20:16) [GCC 14.3.0]
+torch: 2.8.0+cu128
+torch_cuda: 12.8
+transformers: 4.44.2
+flash_attn: 2.8.3
+
+=== DATA SHA256 ===
+d28112beb3a9b41d80aa390837fa1a31c9e3da84a5262009c97585cc49f597c4  /scratch/sr7849/KV_Cache/riskkv_pipeline/external/KVCache-Factory/data/LongBench/gov_report.jsonl
+a0005ab2a1bc2ac3a70352dccbf96cccc4e0aac6bb677f6a55180fa51b92ef6f  /scratch/sr7849/KV_Cache/riskkv_pipeline/external/KVCache-Factory/data/LongBench/hotpotqa.jsonl
+0aac182fd317dcf6d74f8e1e0f3e61029407435346c2e0b3ff9fb45ae49c5c3f  /scratch/sr7849/KV_Cache/riskkv_pipeline/external/KVCache-Factory/data/LongBench/multifieldqa_en.jsonl
+f8817c00af317c2d7f81128f334bcfe5780c6c2a515d5c96811aa0ddf8b5ee6b  /scratch/sr7849/KV_Cache/riskkv_pipeline/external/KVCache-Factory/data/LongBench/multi_news.jsonl
+0455a8f1e8e99d63a86bdc6bdb8b943b22509e3102bbef65ce6794045e03bbcd  /scratch/sr7849/KV_Cache/riskkv_pipeline/external/KVCache-Factory/data/LongBench/passage_count.jsonl
+0f34d2955bfc9bd21ccaa3f4c5aa4e41263aaf83d3fb6002ff7118c134f1eabd  /scratch/sr7849/KV_Cache/riskkv_pipeline/external/KVCache-Factory/data/LongBench/passage_retrieval_en.jsonl
+29aa07d2a63f36f4fb8e8cd200a3428ee3126d750bde6af1c8f9bc41c2366854  /scratch/sr7849/KV_Cache/riskkv_pipeline/external/KVCache-Factory/data/LongBench/qasper.jsonl
+20a88e14f7442f58a39082cdd7396f1093ea8162da0a4ea7ead7d6757514c8f4  /scratch/sr7849/KV_Cache/riskkv_pipeline/external/KVCache-Factory/data/LongBench/trec.jsonl
+ed2529de2e10b12c00f49981870c23c7c51667069cdd8d0740e1423ff337d7fa  /scratch/sr7849/KV_Cache/riskkv_pipeline/external/KVCache-Factory/data/LongBench/triviaqa.jsonl

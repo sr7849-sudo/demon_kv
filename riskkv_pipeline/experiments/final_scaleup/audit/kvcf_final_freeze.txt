@@ -1,0 +1,13 @@
+=== KVCF FINAL FREEZE ===
+2026-10-11T00:06:20+04:00
+
+complete 189 / 189
+missing NONE
+
+DONE_TOTAL=189
+DONE_L2NORM=45
+ZERO_BYTE_JSON=0
+
+=== MANIFEST SHA256 ===
+248c2d6387846c48035a6eaa5979d93470baf4f21b4eda51252a338e4a4ec96f  experiments/final_scaleup/manifests/kvcf_final_jobs.csv
+ab5dc5a11cd644cf3dc05df56d4ae8c9cd286c33faf91fabbcd853f3b463a2a4  experiments/final_scaleup/audit/kvcf_mistral_compat.patch

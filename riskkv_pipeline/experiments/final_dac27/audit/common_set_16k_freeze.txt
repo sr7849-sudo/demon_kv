@@ -1,0 +1,34 @@
+RiskKV DAC27 common workload
+created=2026-10-08T03:26:08+04:00
+filter=min_1500_max_16000_both_tokenizers
+qwen_model=Qwen/Qwen3-8B
+mistral_model=mistralai/Mistral-7B-Instruct-v0.2
+requests=1331
+tasks=9
+
+=== FILE COUNTS ===
+gov_report.jsonl 161
+hotpotqa.jsonl 89
+multifieldqa_en.jsonl 143
+multi_news.jsonl 147
+passage_count.jsonl 86
+passage_retrieval_en.jsonl 186
+qasper.jsonl 196
+trec.jsonl 200
+triviaqa.jsonl 123
+
+=== DATA SHA256 ===
+81799b512270da724f5fc9d5915e13dda23840fdfaa223333c2f7dc7ff1e4278  data/final_common_longbench_filtered/gov_report.jsonl
+b8ca6218139978264c6e834db1ca9d558475f43e3f0392158f68d221259a763a  data/final_common_longbench_filtered/hotpotqa.jsonl
+827774fd347f21c6bb3874fab4e4b4d6fdba8a5c305eb3c55217d114d46bf728  data/final_common_longbench_filtered/multifieldqa_en.jsonl
+c3e51cebe783f662826205654555e6cbecadba8bdba34a61a47430facd3a0938  data/final_common_longbench_filtered/multi_news.jsonl
+a49aa3e5b32e0650cda5d73d51b36b2992b28a9a3f02f946e89fc62276a2c4ce  data/final_common_longbench_filtered/passage_count.jsonl
+cda4de2e1d19910e2d03981508e502be2e38e660f19689acc9181780f0d5ca8b  data/final_common_longbench_filtered/passage_retrieval_en.jsonl
+a9061a050662b6007743020ff83fdf69a1c92893f0749fa4efb971b8109ae9df  data/final_common_longbench_filtered/qasper.jsonl
+32b79d2541b71ae3292774bf1a38c7200d9d7eda89743affc8d7b7e345d0568b  data/final_common_longbench_filtered/trec.jsonl
+032f4614157cdd5027c8228ec2ee75e1fcdd010b924d7ea0b0fd38c2c00d094e  data/final_common_longbench_filtered/triviaqa.jsonl
+
+=== MANIFEST SHA256 ===
+f9c1e5e0933a5ac739440cbe6b450543a848390d6a95079f539e340fca64c405  experiments/final_dac27/manifests/common_longbench_retained.csv
+6fe59113ce45ec4f2ecf91845727956bf03bc2bbf70f63bd745d8af2bbc22b15  experiments/final_dac27/manifests/common_longbench_all_requests.csv
+9398758795a5520aba2e665f6f1b57de68c3ec04ddec5cdd966ab9a74c79175a  experiments/final_dac27/manifests/common_longbench_config.json
