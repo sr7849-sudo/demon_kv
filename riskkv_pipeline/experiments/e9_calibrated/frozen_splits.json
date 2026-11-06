@@ -1,0 +1,10 @@
+{
+  "seed": 2027,
+  "source": "experiments/final_scaleup/analysis/features_kvcf.csv",
+  "counts": {
+    "train": 665,
+    "calibration": 333,
+    "test": 333
+  },
+  "sha256": "6f3d1eeb980f6bf5a4ee93d60e55fc32f47b958d2637b092e9ec75ff51365441"
+}
